@@ -1,0 +1,73 @@
+.top-about-container {
+	height: 100vh;
+	padding-top: 15vh;
+}
+
+.container {
+	/* background-color: aqua; */
+	width: 80%;
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"description profilePicture";
+	margin-inline: auto;
+}
+
+.subHeading {
+	grid-area: header;
+	/* background-color: #fff; */
+	display: flex;
+}
+.subHeading h3 {
+	color: #bc956a;
+	font-size: 16px;
+	font-family: "Courier New", Courier, monospace;
+	text-transform: uppercase;
+}
+.section__headline {
+	align-self: center;
+	width: 5em;
+	/* display: block; */
+	height: 2px;
+	background-color: #bc956a;
+	margin-right: 1rem;
+}
+
+.decription-container {
+	grid-area: description;
+	/* background-color: rgb(151, 58, 58); */
+}
+.decription-container h1 {
+	font-size: 38px;
+	color: rgb(255, 255, 255);
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	margin-bottom: 1px;
+}
+
+.decription-container p {
+	margin-top: 1rem;
+	font-size: 24px;
+	color: rgb(204, 204, 204);
+}
+.profile-picture-container {
+	grid-area: profilePicture;
+	align-self: center;
+
+	/* temp */
+	/* background-color: #fff; */
+}
+
+.profile-picture-container .profile img {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+
+	border-radius: 8px;
+
+	/* border: 1px solid #ddd;
+	padding: 5px; */
+	padding: 10px;
+	border: 1px solid #77aaff;
+	box-shadow: -1px 1px #77aaff, -2px 2px #77aaff, -3px 3px #77aaff,
+		-4px 4px #77aaff, -5px 5px #77aaff;
+}
