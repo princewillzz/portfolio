@@ -44,7 +44,7 @@ export default function TopAbout() {
 			</section>
 
 			<div
-				class="container1"
+				className="container1"
 				style={{
 					backgroundColor: AppColors.darkBlue,
 				}}

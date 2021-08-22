@@ -2,9 +2,14 @@
 	min-height: 100vh;
 	padding-top: 15vh;
 }
+.container {
+	display: grid;
+	/* background-color: aqua; */
+}
 
 .subHeading {
 	grid-area: header;
+	display: flex;
 	/* background-color: #fff; */
 }
 
@@ -51,16 +56,12 @@
 	.container {
 		/* background-color: aqua; */
 		width: 80%;
-		display: grid;
 		grid-template-areas:
 			"header header"
 			"description profilePicture";
 		margin-inline: auto;
 	}
 
-	.subHeading {
-		display: flex;
-	}
 	.decription-container {
 		margin-right: 1rem;
 	}
@@ -73,16 +74,13 @@
 @media only screen and (max-width: 950px) {
 	.container {
 		width: 80%;
-		display: grid;
 		grid-template-areas:
 			"header"
 			"profilePicture"
 			"description";
 		margin-inline: auto;
 	}
-	.subHeading {
-		display: flex;
-	}
+
 	.decription-container {
 		margin-right: 0px;
 	}
