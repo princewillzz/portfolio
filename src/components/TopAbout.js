@@ -40,6 +40,27 @@ export default function TopAbout() {
 					</div>
 				</div>
 			</section>
+
+			<div
+				class="container1"
+				// style={{
+				// 	backgroundColor: AppColors.backgroundBlue,
+				// }}
+			>
+				<svg
+					className={"waveSVG"}
+					viewBox="0 70 500 60"
+					preserveAspectRatio="xMinYMin meet"
+				>
+					<path
+						d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"
+						style={{
+							stroke: "none",
+							fill: AppColors.backgroundBlue,
+						}}
+					></path>
+				</svg>
+			</div>
 		</>
 	);
 }
