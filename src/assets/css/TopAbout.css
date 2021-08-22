@@ -7,20 +7,6 @@
 	grid-area: header;
 	/* background-color: #fff; */
 }
-.subHeading h3 {
-	color: #bc956a;
-	font-size: 16px;
-	font-family: "Courier New", Courier, monospace;
-	text-transform: uppercase;
-}
-.section__headline {
-	align-self: center;
-	width: 5em;
-	/* display: block; */
-	height: 2px;
-	background-color: #bc956a;
-	margin-right: 1rem;
-}
 
 .decription-container {
 	grid-area: description;

@@ -18,6 +18,8 @@ export default function TopAbout() {
 				<div className="container">
 					<div className="subHeading">
 						<div className="section__headline"></div>
+						<div className="section__headline"></div>
+						<div className="section__headline"></div>
 						<h3>About</h3>
 					</div>
 					<div className="decription-container">
@@ -43,12 +45,12 @@ export default function TopAbout() {
 
 			<div
 				class="container1"
-				// style={{
-				// 	backgroundColor: AppColors.backgroundBlue,
-				// }}
+				style={{
+					backgroundColor: AppColors.darkBlue,
+				}}
 			>
 				<svg
-					className={"waveSVG"}
+					// className={"waveSVG"}
 					viewBox="0 70 500 60"
 					preserveAspectRatio="xMinYMin meet"
 				>
