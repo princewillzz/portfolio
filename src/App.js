@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TopAbout from "./components/TopAbout";
 import { AppColors } from "./assets/AppColors";
+import ContactMe from "./components/ContactMe";
 
 function App() {
 	return (
@@ -14,7 +15,8 @@ function App() {
 		>
 			<Navbar />
 			<TopAbout />
-			<header id="ContactMe" className="App-header">
+			<ContactMe />
+			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
