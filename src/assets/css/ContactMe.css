@@ -1,22 +1,23 @@
 .contact-me-container {
-	position: relative;
+	/* position: relative; */
 	min-height: 100vh;
 	padding-top: 8vh;
 }
-.container {
-	/* background-color: #494979; */
-	/* display: grid;
-	grid-template-rows: auto auto; */
+.contact-me-content {
+	/* background-color: #0f9c26; */
+
 	display: flex;
+	place-items: center;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	width: 80%;
+	margin-inline: auto;
 }
 .subHeading {
 	/* background: #000; */
+	/* display: flex; */
 	align-self: flex-start;
-	/* display: flex;
-	align-items: center; */
 }
 .contact-container {
 	display: flex;

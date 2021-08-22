@@ -15,7 +15,7 @@ export default function TopAbout() {
 				className="top-about-container"
 				id="About"
 			>
-				<div className="container">
+				<div className="about-content-container">
 					<div className="subHeading">
 						<div className="section__headline"></div>
 						<div className="section__headline"></div>

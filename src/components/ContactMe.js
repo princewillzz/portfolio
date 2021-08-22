@@ -13,7 +13,7 @@ export default function ContactMe() {
 				className="contact-me-container"
 				id="ContactMe"
 			>
-				<div className="container">
+				<div className="contact-me-content">
 					<div className="subHeading">
 						<div className="section__headline"></div>
 						<div className="section__headline"></div>
