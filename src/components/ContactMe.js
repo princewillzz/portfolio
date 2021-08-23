@@ -1,14 +1,12 @@
 import React from "react";
-import { AppColors } from "../assets/AppColors";
-
 import "../assets/css/ContactMe.css";
 
-export default function ContactMe() {
+export default function ContactMe({ sectionBackgroundColor }) {
 	return (
 		<>
 			<section
 				style={{
-					backgroundColor: AppColors.darkBlue,
+					backgroundColor: sectionBackgroundColor,
 				}}
 				className="contact-me-container"
 				id="ContactMe"
@@ -40,6 +38,42 @@ export default function ContactMe() {
 						</div>
 					</div>
 				</div>
+
+				<footer className="footer-container">
+					<section>
+						<ul className="footer-nav-links">
+							<li className="footer-nav-link">
+								<span>
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://www.linkedin.com/in/harsh2212/"
+									>
+										<i class="fab fa-linkedin-in"></i>
+									</a>
+								</span>
+							</li>
+							<li className="footer-nav-link">
+								<span>
+									<a href="mailto:harshtiwariai@gmail.com">
+										<i class="fas fa-envelope"></i>
+									</a>
+								</span>
+							</li>
+							<li className="footer-nav-link">
+								<span>
+									<a
+										href="https://github.com/princewillzz"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<i class="fab fa-github"></i>
+									</a>
+								</span>
+							</li>
+						</ul>
+					</section>
+				</footer>
 			</section>
 		</>
 	);

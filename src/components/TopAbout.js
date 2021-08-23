@@ -1,16 +1,13 @@
 import React from "react";
-import { AppColors } from "../assets/AppColors";
-
+import "../assets/css/TopAbout.css";
 import profileImg from "../assets/images/profile1.jpg";
 
-import "../assets/css/TopAbout.css";
-
-export default function TopAbout() {
+export default function TopAbout({ sectionBackgroundColor }) {
 	return (
 		<>
 			<section
 				style={{
-					backgroundColor: AppColors.backgroundBlue,
+					backgroundColor: sectionBackgroundColor,
 				}}
 				className="top-about-container"
 				id="About"
@@ -42,27 +39,6 @@ export default function TopAbout() {
 					</div>
 				</div>
 			</section>
-
-			<div
-				className="container1"
-				style={{
-					backgroundColor: AppColors.darkBlue,
-				}}
-			>
-				<svg
-					// className={"waveSVG"}
-					viewBox="0 70 500 60"
-					preserveAspectRatio="xMinYMin meet"
-				>
-					<path
-						d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"
-						style={{
-							stroke: "none",
-							fill: AppColors.backgroundBlue,
-						}}
-					></path>
-				</svg>
-			</div>
 		</>
 	);
 }
