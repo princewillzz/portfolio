@@ -117,7 +117,7 @@ button.say-hello-btn:active::before {
 }
 
 .footer-container section {
-	/* text-align: center; */
+	text-align: center;
 	/* margin-inline: auto; */
 	/* width: 500px; */
 	/* background-color: #ffe3e2; */

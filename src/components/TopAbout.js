@@ -1,6 +1,7 @@
 import React from "react";
 import "../assets/css/TopAbout.css";
 import profileImg from "../assets/images/profile1.jpg";
+import { SkillsContainer } from "./skills/SkillsContainer";
 
 export default function TopAbout({ sectionBackgroundColor }) {
 	return (
@@ -36,6 +37,9 @@ export default function TopAbout({ sectionBackgroundColor }) {
 						<div className="profile">
 							<img src={profileImg} alt="portfolio-profile" />
 						</div>
+					</div>
+					<div className="skills-container">
+						<SkillsContainer />
 					</div>
 				</div>
 			</section>
