@@ -1,5 +1,4 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
-import { AppColors } from "../assets/AppColors";
 
 
 export default function Navbar({ sectionBackgroundColor }) {
