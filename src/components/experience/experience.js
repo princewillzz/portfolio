@@ -5,6 +5,7 @@ export const experienceRawData = Object.freeze({
             jobRole: "Backend Engineer",
             description: [
                 " Line LineLineLineLi neLineLine Line LineLine 11",
+                " Line LineLineLineLi neLineLine Line LineLine 21",
                 "lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum"
             ],
             startDate: "Aug 2021",
@@ -15,6 +16,7 @@ export const experienceRawData = Object.freeze({
             jobRole: "Software Engineer",
             description: [
                 "lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum",
+                " Line LineLineLineLi neLineLine Line LineLine 21",
                 " Line LineLineLineLi neLineLine Line LineLine 21"
             ],
             startDate: "Aug 2020",

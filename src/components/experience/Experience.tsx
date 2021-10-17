@@ -59,7 +59,6 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
                 <Tabs 
                     defaultActiveKey={"1"} 
                     tabPosition={windowInnerWidthSize > widthToChangeLayout? "left": "top"} 
-                    style={{ height: 220 }}
                 >
                     {experienceData?.map((_experienceData, index) => (
                         <TabPane 
