@@ -16,7 +16,7 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
 
             <SubHeading heading={"Experience"} />
 
-            
+
 
             
         </ExperienceContainer>
@@ -25,5 +25,5 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
 
 
 const ExperienceContainer = styled.section`
-
+    padding-top: 6vh;
 `;

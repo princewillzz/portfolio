@@ -11,7 +11,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		const currentScrollPos = window.pageYOffset;
 		const visible = prevScrollpos.current > currentScrollPos;
 
-		console.log(prevScrollpos, currentScrollPos, visible);
+		// console.log(prevScrollpos, currentScrollPos, visible);
 
 		prevScrollpos.current = currentScrollPos;
 		// setPrevScrollpos(currentScrollPos);
@@ -31,7 +31,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		};
 	}, [handleScroll]);
 
-	console.log(visible);
+	// console.log(visible);
 
 	return (
 		<NavbarContainer>
@@ -76,8 +76,11 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 
 
 const NavbarContainer = styled.div`
-	
+
 	.navbar {
+		// background-color: red !important;
+		height: 9vh;
+
 		display: flex;
 		justify-content: space-between;
 		/* justify-content: center; */
@@ -122,6 +125,8 @@ const NavbarContainer = styled.div`
 		display: block;
 		position: relative;
 		padding: 0.2em 0;
+
+		font-size: 16px;
 	}
 
 	.nav-link a:hover {
