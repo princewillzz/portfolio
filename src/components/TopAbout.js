@@ -21,14 +21,7 @@ export default function TopAbout({ sectionBackgroundColor }) {
 					<div className="decription-container">
 						<h1>Hi, I'm Harsh Tiwari</h1>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Ab, quod illo laudantium quasi autem eaque
-							nemo voluptatem molestias maxime suscipit eligendi
-							id ullam molestiae expedita sapiente fugiat tenetur,
-							nihil dolorem, consequatur iure ut beatae vitae!
-							Consequuntur, officia ex at maxime laboriosam
-							nostrum sequi iste? Velit beatae numquam ducimus
-							nihil neque.
+						I am enthusiastic and hardworking and always in urge for growing my skills and trying to be an asset to the team and to the organisation. I am willing to take up interesting and challenging work and looking forward to learn from the team and organisation.
 						</p>
 					</div>
 					<div className="profile-picture-container">
