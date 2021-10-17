@@ -1,5 +1,6 @@
 import React from "react";
 import profileImg from "../assets/images/profile1.jpg";
+import { SubHeading } from "./SubHeading";
 
 export default function TopAbout({ sectionBackgroundColor }) {
 	return (
@@ -11,13 +12,17 @@ export default function TopAbout({ sectionBackgroundColor }) {
 				className="top-about-container"
 				id="About"
 			>
+				<SubHeading heading={"About"} />
 				<div className="about-content-container">
+{/* 
 					<div className="subHeading about-subHeading">
 						<div className="section__headline"></div>
 						<div className="section__headline"></div>
 						<div className="section__headline"></div>
 						<h3>About</h3>
-					</div>
+					</div> */}
+					
+					 
 					<div className="decription-container">
 						<h1>Hi, I'm Harsh Tiwari</h1>
 						<p>

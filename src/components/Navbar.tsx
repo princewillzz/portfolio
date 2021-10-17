@@ -1,5 +1,6 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import styled from 'styled-components';
+import { AppColors } from "../assets/AppColors";
 
 export default function Navbar({ sectionBackgroundColor }: any) {
 	// const [prevScrollpos, setPrevScrollpos] = useState(0);
@@ -34,7 +35,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 	// console.log(visible);
 
 	return (
-		<NavbarContainer>
+		<NavbarContainer textHoverColor={AppColors.navbarHoverTextColor}>
 			<nav
 				style={{
 					backgroundColor: sectionBackgroundColor
@@ -74,8 +75,10 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 	);
 }
 
-
-const NavbarContainer = styled.div`
+interface NavbarProps {
+	textHoverColor: string
+}
+const NavbarContainer = styled.div<NavbarProps>`
 
 	.navbar {
 		// background-color: red !important;
@@ -130,7 +133,7 @@ const NavbarContainer = styled.div`
 	}
 
 	.nav-link a:hover {
-		color: rgb(255, 0, 179);
+		color: ${props => props.textHoverColor};
 	}
 
 	/* Fade in */

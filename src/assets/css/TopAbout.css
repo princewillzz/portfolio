@@ -69,7 +69,6 @@
 		/* background-color: aqua; */
 		width: 80%;
 		grid-template-areas:
-			"header header"
 			"description profilePicture";
 			/* "tools-tech-subHeading tools-tech-subHeading"
 			"skills skills"; */
@@ -90,7 +89,6 @@
 		width: 80%;
 		/* padding-inline: 2rem; */
 		grid-template-areas:
-			"header"
 			"profilePicture"
 			"description";
 			/* "tools-tech-subHeading"
