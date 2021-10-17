@@ -58,12 +58,12 @@ export const skillImgs = [
             alt: 'postgresql'
         },
         {
-            img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg",
-            alt: 'redis'
-        },
-        {
             img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
             alt: 'mongodb'
+        },
+        {
+            img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg",
+            alt: 'redis'
         },
     ],
     [
@@ -81,8 +81,20 @@ export const skillImgs = [
             alt: 'html'
         },
         {
+            img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+            alt: 'css'
+        },
+        {
             img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
             alt: 'bootstrap'
+        },
+        {
+            img: "https://camo.githubusercontent.com/363242675617648bfbedd1610f89ac28df0f9e1bac8749d83109fafdf8524fff/68747470733a2f2f67772e616c697061796f626a656374732e636f6d2f7a6f732f726d73706f7274616c2f4b4470677667754d704766716148506a6963524b2e737667",
+            alt: 'antd'
+        },
+        {
+            img: "https://camo.githubusercontent.com/306dedb9426f1d93a981d305a0a18164932ece8dca4d5fd820b1d3c36625b218/68747470733a2f2f6d75692e636f6d2f7374617469632f6c6f676f2e737667",
+            alt: 'material'
         },
     ],
     [
