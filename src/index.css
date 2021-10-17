@@ -29,6 +29,15 @@ code {
 }
 
 /* SubHeading for each section */
+.subHeading-container {
+	/* margin-top: 7rem; */
+
+    display: flex;
+    
+    width: 80vw;
+    margin-inline: auto;
+
+}
 .subHeading {
 	display: flex;
 }

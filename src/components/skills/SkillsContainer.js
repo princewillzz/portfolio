@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { SubHeading } from '../SubHeading';
 import { skillImgs } from './skills-img';
 import { VerticalCarousel } from './VerticalCarousel';
 
@@ -86,14 +87,8 @@ export const SkillsContainer = ({ sectionBackgroundColor }) => {
 			>
 				<div className="skills-section-content">
 
-					<div className="tools-tech-subHeading">
-						<div className="subHeading">
-							<div className="section__headline"></div>
-							<div className="section__headline"></div>
-							<div className="section__headline"></div>
-							<h3>Tools And Technologies</h3>
-						</div>
-					</div>
+
+                    <SubHeading heading={"Tools And Technologies"} />
 
 					<div className="skills-container">
                         <ul className="skills-categories">
