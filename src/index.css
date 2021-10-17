@@ -29,6 +29,9 @@ code {
 }
 
 /* SubHeading for each section */
+.subHeading {
+	display: flex;
+}
 .subHeading h3 {
 	color: #bc956a;
 	font-size: 16px;

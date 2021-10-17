@@ -14,7 +14,7 @@ export default function TopAbout({ sectionBackgroundColor }) {
 				id="About"
 			>
 				<div className="about-content-container">
-					<div className="subHeading">
+					<div className="subHeading about-subHeading">
 						<div className="section__headline"></div>
 						<div className="section__headline"></div>
 						<div className="section__headline"></div>
@@ -38,6 +38,12 @@ export default function TopAbout({ sectionBackgroundColor }) {
 							<img src={profileImg} alt="portfolio-profile" />
 						</div>
 					</div>
+						<div className="subHeading tools-tech-subHeading">
+							<div className="section__headline"></div>
+							<div className="section__headline"></div>
+							<div className="section__headline"></div>
+							<h3>Tools And Technologies</h3>
+						</div>
 					<div className="skills-container">
 						<SkillsContainer />
 					</div>

@@ -7,10 +7,14 @@
 	/* background-color: aqua; */
 }
 
-.subHeading {
+.about-subHeading {
 	grid-area: header;
-	display: flex;
 	/* background-color: #fff; */
+}
+
+.tools-tech-subHeading {
+	grid-area: tools-tech-subHeading;
+	margin-top: 7rem;
 }
 
 .decription-container {
@@ -70,6 +74,7 @@
 		grid-template-areas:
 			"header header"
 			"description profilePicture"
+			"tools-tech-subHeading tools-tech-subHeading"
 			"skills skills";
 		margin-inline: auto;
 	}
@@ -91,6 +96,7 @@
 			"header"
 			"profilePicture"
 			"description"
+			"tools-tech-subHeading"
 			"skills";
 		margin-inline: auto;
 	}
