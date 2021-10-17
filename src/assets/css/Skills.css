@@ -1,31 +1,58 @@
+.skills-section-container {
+}
+.skills-section-content {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.tools-tech-subHeading {
+	margin-top: 7rem;
+
+    display: flex;
+    
+    width: 80vw;
+    margin-inline: auto;
+
+}
+.skills-container {
+    place-self: center;
+
+}
 
 .skills-categories {
     display: flex;
+    width: 100%;
+
+    
+    justify-content: space-between;
+    
+    width: min(900px, 90vw);
+    margin-inline: auto;
 
 	list-style: none;
-
-    max-width: max(auto, 300px);
 }
 
 .skills-category{
     transition: all 0.3s;
 
     display: flex;
-    place-self: center;
+    /* place-self: center; */
 
 }
+
 
 /* big screens */
 @media only screen and (min-width: 850px) {
-    .skills-container {
-        place-self: center;
-    }
-
     .skills-categories {
-        gap: 5rem;
+        /* gap: 5rem; */
     }
 }
-
+@media only screen and (max-width: 850px) {
+    .skills-categories {
+        /* gap: 5rem; */
+    }
+}
 /* Large Screen */
 @media only screen and (min-width: 650px) {
 	
@@ -45,25 +72,29 @@
 		
         max-height: 260px;
         overflow-y: auto;
-        behavior: smooth;
 	}
 
 }
 
 /* Small Screen */
 @media only screen and (max-width: 650px) {
+
+    .skills-container {
+
+    }
+
 	.skills-categories {
         flex-direction: column;
         padding-inline: 1rem;
         gap: 2rem;
         /* max-width: 90%; */
+
+        width: min(900px, 100vw);
 	}
     .skills-category {
         flex-direction: row;
         justify-content: space-between;
 
-        max-width: 350px;
-        /* max-width: 90%; */
         overflow-x: scroll;
         
         gap: 2rem;
@@ -74,7 +105,7 @@
 
 @media only screen and (max-width: 450px) {
     .skills-categories {
-        max-width: 300px;
+        /* max-width: 300px; */
     }
 }
 
@@ -85,6 +116,14 @@
     will-change: transform;
     user-select: none;
     cursor: pointer;
+
+    /* background-color: rgb(107, 104, 104); */
+}
+.skill-bg img {
+    /* background-color: rgb(156, 156, 156);
+    border-radius: 50%; */
+    /* background-color:#e1e1e9; */
+    filter: invert(48%) sepia(93%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 .skill img {
     z-index: 10 !important;
@@ -93,9 +132,5 @@
 }
 
 .skill img:hover {
-    /* cursor: -webkit-grabbing; */
     transform: scale(1.2);
-/*     
-    height: 100px;
-    width: 100px; */
 }
