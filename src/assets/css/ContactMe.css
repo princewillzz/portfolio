@@ -111,7 +111,7 @@ button.say-hello-btn:active::before {
 	height: 60px; */
 	/* position: absolute; */
 	background: #272727;
-	height: 7rem;
+	height: 5rem;
 	/* margin-top: -200px; */
 	/* position: relative; */
 }
