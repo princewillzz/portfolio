@@ -9,7 +9,7 @@ export const VerticalCarousel = ({ imgData }) => {
                 filter: imgData.filter || "none"
             }}
         >
-            <img src={imgData.img} alt={imgData.alt} width="55" height="55"/>
+            <img className={"App-logo"} src={imgData.img} alt={imgData.alt} width="55" height="55"/>
         </div>
     )
 }

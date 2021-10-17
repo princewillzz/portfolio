@@ -1,7 +1,11 @@
+@import '~antd/dist/antd.css';
+
 @import url("./assets/css/Navbar.css");
 @import url("./assets/css/TopAbout.css");
 @import url("./assets/css/Skills.css");
 @import url("./assets/css/ContactMe.css");
+@import url("./assets/css/Experience.css");
+
 
 .App {
 	/* text-align: center; */
@@ -11,7 +15,7 @@
 }
 
 .App-logo {
-	height: 40vmin;
+	/* height: 40vmin; */
 	pointer-events: none;
 }
 
