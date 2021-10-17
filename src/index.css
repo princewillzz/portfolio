@@ -16,12 +16,22 @@ body {
 	background-color: #282c34;
 }
 
+* {
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
 
 /* SubHeading for each section */
+.subHeading {
+	display: flex;
+}
 .subHeading h3 {
 	color: #bc956a;
 	font-size: 16px;

@@ -30,6 +30,8 @@ export default function ContactMe({ sectionBackgroundColor }) {
 									textDecoration: "none",
 									color: "#ffff",
 								}}
+								target="_blank"
+								rel="noreferrer"
 							>
 								<button className={"say-hello-btn"}>
 									Say Hello
@@ -49,14 +51,14 @@ export default function ContactMe({ sectionBackgroundColor }) {
 										rel="noopener noreferrer"
 										href="https://www.linkedin.com/in/harsh2212/"
 									>
-										<i class="fab fa-linkedin-in"></i>
+										<i className="fab fa-linkedin-in"></i>
 									</a>
 								</span>
 							</li>
 							<li className="footer-nav-link">
 								<span>
 									<a href="mailto:harshtiwariai@gmail.com">
-										<i class="fas fa-envelope"></i>
+										<i className="fas fa-envelope"></i>
 									</a>
 								</span>
 							</li>
@@ -67,7 +69,7 @@ export default function ContactMe({ sectionBackgroundColor }) {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<i class="fab fa-github"></i>
+										<i className="fab fa-github"></i>
 									</a>
 								</span>
 							</li>
