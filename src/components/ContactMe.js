@@ -1,5 +1,4 @@
 import React from "react";
-import "../assets/css/ContactMe.css";
 
 export default function ContactMe({ sectionBackgroundColor }) {
 	return (

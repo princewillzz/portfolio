@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import "../../assets/css/Skills.css";
 import { skillImgs } from './skills-img';
 import { VerticalCarousel } from './VerticalCarousel';
 
 
-export const SkillsContainer = () => {
+export const SkillsContainer = ({ sectionBackgroundColor }) => {
 
     const [toBeRenderedItems, setToBeRenderItems] = useState([]);
 
@@ -77,9 +76,32 @@ export const SkillsContainer = () => {
     
     return (
         <>
-            <ul className="skills-categories">
-                {toBeRenderedItems}
-            </ul>
+            
+
+            <div
+				className="skills-section-container"
+				style={{
+					backgroundColor: sectionBackgroundColor
+				}}
+			>
+				<div className="skills-section-content">
+
+					<div className="tools-tech-subHeading">
+						<div className="subHeading">
+							<div className="section__headline"></div>
+							<div className="section__headline"></div>
+							<div className="section__headline"></div>
+							<h3>Tools And Technologies</h3>
+						</div>
+					</div>
+
+					<div className="skills-container">
+                        <ul className="skills-categories">
+                            {toBeRenderedItems}
+                        </ul>
+					</div>
+				</div>
+			</div>
         </>
     )
 }

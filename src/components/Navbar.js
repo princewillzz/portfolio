@@ -1,9 +1,8 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { AppColors } from "../assets/AppColors";
 
-import "../assets/css/Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ sectionBackgroundColor }) {
 	// const [prevScrollpos, setPrevScrollpos] = useState(0);
 	const prevScrollpos = useRef(0);
 	const [visible, setVisible] = useState(true);
@@ -39,7 +38,7 @@ export default function Navbar() {
 		<>
 			<nav
 				style={{
-					backgroundColor: AppColors.backgroundBlue,
+					backgroundColor: sectionBackgroundColor
 				}}
 				className={`navbar ${!visible && "navbar--hidden"} ${
 					makeOpacity && "navbar__opacity"

@@ -12,10 +12,7 @@
 	/* background-color: #fff; */
 }
 
-.tools-tech-subHeading {
-	grid-area: tools-tech-subHeading;
-	margin-top: 7rem;
-}
+
 
 .decription-container {
 	grid-area: description;
@@ -42,7 +39,7 @@
 
 /* Skills Sections */
 .skills-container {
-	grid-area: skills;
+	/* grid-area: skills; */
 
 	/* max-width: 90%; */
 }
@@ -73,9 +70,9 @@
 		width: 80%;
 		grid-template-areas:
 			"header header"
-			"description profilePicture"
-			"tools-tech-subHeading tools-tech-subHeading"
-			"skills skills";
+			"description profilePicture";
+			/* "tools-tech-subHeading tools-tech-subHeading"
+			"skills skills"; */
 		margin-inline: auto;
 	}
 
@@ -95,9 +92,9 @@
 		grid-template-areas:
 			"header"
 			"profilePicture"
-			"description"
-			"tools-tech-subHeading"
-			"skills";
+			"description";
+			/* "tools-tech-subHeading"
+			"skills"; */
 		margin-inline: auto;
 	}
 

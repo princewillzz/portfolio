@@ -40,7 +40,8 @@ export const skillImgs = [
         },
         {
             img: "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg",
-            alt: 'expressjs'
+            alt: 'expressjs',
+            filter: "invert(48%) sepia(93%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%)"
         },
         {
             img: "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg",
@@ -61,8 +62,8 @@ export const skillImgs = [
             alt: 'redis'
         },
         {
-            img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
-            alt: ''
+            img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+            alt: 'mongodb'
         },
     ],
     [
@@ -91,7 +92,8 @@ export const skillImgs = [
         },
         {
             img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-            alt: 'aws'
+            alt: 'aws',
+            filter: "invert(48%) sepia(93%) saturate(3207%) hue-rotate(10deg) brightness(95%) contrast(80%)"
         },
         {
             img: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
@@ -99,7 +101,8 @@ export const skillImgs = [
         },
         {
             img: "https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg",
-            alt: 'git'
+            alt: 'git',
+            filter: "invert(48%) sepia(93%) saturate(3207%) hue-rotate(310deg) brightness(95%) contrast(80%)"
         },
         {
             img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
