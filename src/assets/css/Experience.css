@@ -1,0 +1,24 @@
+.card-project-content {
+    z-index: 8;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+
+    right: 10px;
+
+}
+
+.card-project-content .project-tool-used {
+    display: flex;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+.card-project-content .project-tool-used-item {
+    color: #d4d6db;
+
+    /* background: #393a3d; */
+}

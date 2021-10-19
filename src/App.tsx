@@ -4,6 +4,7 @@ import { AppColors } from "./assets/AppColors";
 import ContactMe from "./components/ContactMe";
 import { Experience } from "./components/experience/Experience";
 import Navbar from "./components/Navbar";
+import { Projects } from "./components/projects/Projects";
 import { SkillsContainer } from "./components/skills/SkillsContainer";
 import TopAbout from "./components/TopAbout";
 import WaveBorder from "./components/WaveBorder";
@@ -31,7 +32,7 @@ const App:FC = () => {
 				bottomColor={AppColors.backgroundBlack}
 			/>
 
-			<SkillsContainer sectionBackgroundColor={AppColors.backgroundBlack} />
+			<Projects sectionBackgroundColor={AppColors.backgroundBlack} />
 			<WaveBorder
 				upColor={AppColors.backgroundBlack}
 				bottomColor={AppColors.grey}
