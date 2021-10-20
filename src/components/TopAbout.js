@@ -12,7 +12,7 @@ export default function TopAbout({ sectionBackgroundColor }) {
 				className="top-about-container"
 				id="About"
 			>
-				<SubHeading heading={"About"} />
+				<SubHeading heading={"About"} maxWidth={'1050px'} />
 				<div className="about-content-container">
 {/* 
 					<div className="subHeading about-subHeading">
