@@ -1,8 +1,9 @@
 import { ContainerOutlined, GithubFilled, LinkOutlined, RightOutlined } from '@ant-design/icons'
-import { Card, Carousel, Image, Typography } from 'antd'
+import { Card, Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AppColors } from '../../assets/AppColors'
+import { CustomProjectImageCarasoul } from '../project-img-carasoul/CustomProjectImageCarasoul'
 
 interface ProjectProps {
     isInverted?: boolean,
@@ -15,7 +16,8 @@ interface ProjectDataProps {
     descriptionPoints: string[],
     githubLink?: string,
     hostedLink?: string,
-    documentationLink?: string
+    documentationLink?: string,
+    images?: string[]
 }
 
 
@@ -38,43 +40,25 @@ export const Project = ({ isInverted, projectData }: ProjectProps) => {
         <CustomProjectCard 
             loading={isLoading}
             bordered={false}
-            isInverted={isInverted}
-        
+            isinverted={isInverted? 'true': 'false'}
         >
             <section >
 
                 <div className="card-project-content">
-                    <div className="project-img-carasoul-container">
-                        {/* <img style={{ height: 300, width: 400 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" /> */}
-                        <CustomProjectImgCarousel
-                            autoplay                
-                            // style={{ width: 400, maxHeight: 300 }}
-                            effect="fade"
+                    <CustomProjectImageCarasoul 
+                        isInverted={isInverted}
+                        images={projectData.images} 
+                    />
+                    
+
+                    <a href={projectData?.hostedLink || projectData?.githubLink} target="_blank" rel="noopener noreferrer">
+                        <ProjectNameTypographyContainer
+                            textcolor={AppColors.activeTextColor}
                         >
-                            <div>
-                                <Image
-                                    style={{ maxHeight: 300 }} 
-                                    width={'100%'} 
-                                    preview={false} 
-                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
-                                /> 
-                            </div>
-                            <div>
-                                <Image
-                                    style={{ maxHeight: 300 }} 
-                                    width={'100%'} 
-                                    preview={false} 
-                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
-                                /> 
-                            </div>
-                        </CustomProjectImgCarousel>
-                    </div>
-                    <ProjectNameTypographyContainer
-                        textColor={AppColors.activeTextColor}
-                        className="projectName"
-                    >
-                        {projectData.name}
-                    </ProjectNameTypographyContainer>
+                                {projectData.name}
+                        </ProjectNameTypographyContainer>
+                    </a>
+
 
                     <ProjectDescriptionCard
                         bordered={false}
@@ -145,11 +129,18 @@ export const Project = ({ isInverted, projectData }: ProjectProps) => {
 
 
 interface CustomProjectCardProps {
-    isInverted?: boolean
+    isinverted?: string
 }
 
 const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     background: none;
+    min-height: 350px;
+
+    &:hover{
+        transition: all 0.6s ease;
+        background: #0a0a0a73;
+        box-shadow: 0 7px 12px rgb(0 0 0 / 0.45);
+    }
 
     .card-project-content * {
         z-index: 1;
@@ -162,20 +153,6 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
         gap: 1.2rem;
     }
 
-    .project-img-carasoul-container {
-        position: absolute;
-        max-width: 100%;
-        z-index: 0;
-    }
-    .project-img-carasoul-container img {
-        border-radius: 5px;
-    }
-
-    .projectName {
-        font-size: 26px;
-        font-weight: 500;
-
-    }
     
     .card-project-content .project-tool-used {
         display: flex;
@@ -196,17 +173,10 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     }
     
     @media only screen and (min-width: 750px) {
-        .project-img-carasoul-container {
-            right:  ${props => props.isInverted? '10px': 'auto'};
-            left:  ${props => props.isInverted? 'auto': '10px'};
-        }
-
+       
         .card-project-content {
 
-            align-items: ${props => props.isInverted? 'flex-start': 'flex-end'};
-
-            // right: ${props => props.isInverted? 'auto': '10px'};
-            // left: ${props => props.isInverted? '0px': 'auto'};
+            align-items: ${props => props.isinverted === 'true'? 'flex-start': 'flex-end'};
         }       
             
     }
@@ -217,14 +187,6 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     
             left: 0px;
             
-        }
-        .project-img-carasoul-container {
-            padding-left: 1.2rem;
-        }
-        .project-img-carasoul-container img {
-            background: black;
-    
-            opacity: 0.34;
         }
     
         .card-project-content .project-tool-used-item {
@@ -237,25 +199,40 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     
 `
 
-const CustomProjectImgCarousel = styled(Carousel)`
-    max-height: 300px;
-    width: 400px;
-    max-width: 95%;
+interface ProjectNameTypographyContainerProps {
+    textcolor: string
+}
 
-    z-index: 1;
-`;
+const ProjectNameTypographyContainer = styled(Typography)<ProjectNameTypographyContainerProps>`
+    color: ${props => props.textcolor};
+    font-size: 26px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
 
-const ProjectNameTypographyContainer = styled(Typography)<any>`
-    color: ${props => props.textColor};
+    &:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    &:hover:after { 
+        width: 100%; 
+        left: 0; 
+    }
 `;
 
 const ProjectDescriptionCard = styled(Card)<any>`
     max-width: min(100%, 550px);
 
-    // @media only screen and (min-width: 750px) {
         background: #393a3d;
         box-shadow: 0 7px 12px rgb(0 0 0 / 0.45);
-    // }
 
     @media only screen and (max-width: 750px) {
         // background: none;

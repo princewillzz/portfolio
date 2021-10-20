@@ -15,7 +15,8 @@ interface FeatureProjectResponse {
     descriptionPoints: string[],
     githubLink?: string,
     hostedLink?: string,
-    documentationLink?: string
+    documentationLink?: string,
+    images?: string[]
 }
 
 
@@ -43,6 +44,7 @@ export const Projects = ({ sectionBackgroundColor }: ProjectsProps) => {
                     ?.featured
                     ?.map((_featuredProjectData, _index) => (
                         <Project
+                            key={_index}
                             projectData={_featuredProjectData}
                             isInverted={ _index % 2? true: false } 
                         />
