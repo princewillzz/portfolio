@@ -76,7 +76,7 @@ export const SkillsContainer = ({ sectionBackgroundColor }: SkillsProps) => {
 
         return () => {
             if(scrollInterval) {
-                console.log(scrollInterval);
+                // console.log(scrollInterval);
                 scrollInterval.forEach(_interval => clearInterval(_interval))
             }
         }

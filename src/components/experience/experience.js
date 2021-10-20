@@ -4,9 +4,8 @@ export const experienceRawData = Object.freeze({
             companyName: "Eleva Infotech",
             jobRole: "Backend Engineer",
             description: [
-                " Line LineLineLineLi neLineLine Line LineLine 11",
-                " Line LineLineLineLi neLineLine Line LineLine 21",
-                "lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum"
+                "Worked on a POS software that manages day to day functionality of restaurants",
+                "Developed order management APIs and UI using Express, ReactJS, MongoDB, facilitating execution of orders on various levels (waiter, chef, manager, etc)"
             ],
             startDate: "Aug 2021",
             endDate: "Present"
@@ -15,9 +14,11 @@ export const experienceRawData = Object.freeze({
             companyName: "Chuhiya Software",
             jobRole: "Software Engineer",
             description: [
-                "lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum",
-                " Line LineLineLineLi neLineLine Line LineLine 21",
-                " Line LineLineLineLi neLineLine Line LineLine 21"
+                " Developed backend for ERP software and designed databases forthe projects",
+                "Implemented features like role-based and OAuth Authentication and Authorization, in-memory Cache, payment gateway integration (Razorpay)",
+                "Integrated Google Drive storage to let users upload and download their data",
+                "Used WebSocket with STOMP subprotocol to build real-time status feed",
+                "Deployed projects on AWS using Elastic beanstalk and RDS"
             ],
             startDate: "Aug 2020",
             endDate: "Feb 2021"
