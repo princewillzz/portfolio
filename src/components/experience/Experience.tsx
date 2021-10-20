@@ -50,7 +50,7 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
                 // backgroundColor: "#fff"
             }}
         >
-            <SubHeading heading={"Experience"} />
+            <SubHeading heading={"Experience"} maxWidth={"900px"} />
 
             <TabContainer
                 secondaryColor={AppColors.secondaryTextColor}
@@ -113,6 +113,8 @@ const TabContainer = styled.section<TabContainerProps>`
     margin-top: 3rem;
     width: 88vw;
     margin-inline: auto;
+
+    max-width: 900px;
 
     // Tab shadow effect
     // .ant-tabs-nav-list {

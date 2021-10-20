@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { AppColors } from '../assets/AppColors';
 
 interface SubHeadingProp {
-    heading: string
+    heading: string,
+    maxWidth?: string
 }
 
-export const SubHeading = ({ heading }: SubHeadingProp) => {
+export const SubHeading = ({ heading, maxWidth }: SubHeadingProp) => {
     return (
-        <SubHeadingContainer textColor={AppColors.subHeadingColor} className="subHeading-container">
+        <SubHeadingContainer textColor={AppColors.subHeadingColor} maxWidth={maxWidth} className="subHeading-container">
             <div className="subHeading">
                 <div className="section__headline"></div>
                 <div className="section__headline"></div>
@@ -20,7 +21,8 @@ export const SubHeading = ({ heading }: SubHeadingProp) => {
 }
 
 interface ContainerProps {
-    textColor: string
+    textColor: string,
+    maxWidth?: string
 }
 
 const SubHeadingContainer = styled.div<ContainerProps>`
@@ -30,6 +32,7 @@ const SubHeadingContainer = styled.div<ContainerProps>`
     
     width: 80vw;
     margin-inline: auto;
+    max-width: ${props => props.maxWidth || 'auto'};
 
     .subHeading {
         display: flex;

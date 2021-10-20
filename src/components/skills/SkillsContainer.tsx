@@ -94,7 +94,7 @@ export const SkillsContainer = ({ sectionBackgroundColor }: SkillsProps) => {
 				<div className="skills-section-content">
 
 
-                    <SubHeading heading={"Tools And Technologies"} />
+                    <SubHeading heading={"Tools And Technologies"} maxWidth={'900px'}/>
 
 					<div className="skills-container">
                         <ul className="skills-categories">

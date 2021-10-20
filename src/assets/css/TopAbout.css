@@ -5,6 +5,8 @@
 .about-content-container {
 	display: grid;
 	/* background-color: aqua; */
+
+	max-width: 1000px;
 }
 
 .about-subHeading {
