@@ -1,97 +1,138 @@
-import { GithubFilled, LinkOutlined, RightOutlined } from '@ant-design/icons'
+import { ContainerOutlined, GithubFilled, LinkOutlined, RightOutlined } from '@ant-design/icons'
 import { Card, Carousel, Image, Typography } from 'antd'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AppColors } from '../../assets/AppColors'
 
 interface ProjectProps {
-    isInverted?: boolean
+    isInverted?: boolean,
+    projectData: ProjectDataProps 
 }
 
-export const Project = ({ isInverted }: ProjectProps) => {
+interface ProjectDataProps {
+    name: string,
+    tools: string[],
+    descriptionPoints: string[],
+    githubLink?: string,
+    hostedLink?: string,
+    documentationLink?: string
+}
+
+
+export const Project = ({ isInverted, projectData }: ProjectProps) => {
     
+
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        const loadingTimeOut = setTimeout(() => {
+            setIsLoading(false)
+        }, 2000);
+
+        return () => {
+            clearTimeout(loadingTimeOut);
+        }
+    }, [])
+
     return (
         <CustomProjectCard 
-            loading={false}
-            style={{ height: 350 }}
+            loading={isLoading}
             bordered={false}
             isInverted={isInverted}
+        
         >
-            <section>
-                <div className="project-img-carasoul-container">
-                    {/* <img style={{ height: 300, width: 400 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" /> */}
-                    <CustomProjectImgCarousel
-                        autoplay                
-                        // style={{ width: 400, maxHeight: 300 }}
-                        effect="fade"
-                    >
-                        <div>
-                            <Image
-                                style={{ maxHeight: 300 }} 
-                                width={'100%'} 
-                                preview={false} 
-                                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
-                            /> 
-                        </div>
-                        <div>
-                            <Image
-                                style={{ maxHeight: 300 }} 
-                                width={'100%'} 
-                                preview={false} 
-                                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
-                            /> 
-                        </div>
-                    </CustomProjectImgCarousel>
-                </div>
+            <section >
 
                 <div className="card-project-content">
-
+                    <div className="project-img-carasoul-container">
+                        {/* <img style={{ height: 300, width: 400 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" /> */}
+                        <CustomProjectImgCarousel
+                            autoplay                
+                            // style={{ width: 400, maxHeight: 300 }}
+                            effect="fade"
+                        >
+                            <div>
+                                <Image
+                                    style={{ maxHeight: 300 }} 
+                                    width={'100%'} 
+                                    preview={false} 
+                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
+                                /> 
+                            </div>
+                            <div>
+                                <Image
+                                    style={{ maxHeight: 300 }} 
+                                    width={'100%'} 
+                                    preview={false} 
+                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" 
+                                /> 
+                            </div>
+                        </CustomProjectImgCarousel>
+                    </div>
                     <ProjectNameTypographyContainer
                         textColor={AppColors.activeTextColor}
                         className="projectName"
                     >
-                        Untangled Chat
+                        {projectData.name}
                     </ProjectNameTypographyContainer>
 
                     <ProjectDescriptionCard
                         bordered={false}
                     >
                         <ul>
-                            <li>
-                                <RightOutlined style={{ alignSelf: "baseline", color: AppColors.activeTextColor }} />
-                                <Typography style={{ color: "#d4d6db" }}>
-                                    Hiil;ad;l ads;sa;dlk; alsdk;asdk; kda;akds;
-                                    lsajdsaldjs alk dsadsadsa djsalkjdlkj
-                                    lsajdsa ldjsalk dsadsadsadjsalkjdlkj
-                                    lsajdsaldj salkdsa dsadsadjsalkjdlkj
-                                </Typography>
-                            </li>
-                            <li>
-                                <RightOutlined style={{ alignSelf: "baseline", color: AppColors.activeTextColor }} />
-                                <Typography style={{ color: "#d4d6db" }}>
-                                    Hiil;ad; lads;sa;dlk;a lsdk;asdk;kda;akds;
-                                    lsaj dsaldjsal kdsadsadsadj salkjdlkj
-                                    <span>lsajdsald jsalkdsadsadsadjsalkjdlkj</span>
-                                </Typography>
-                            </li>
+                            {
+                                projectData
+                                .descriptionPoints
+                                ?.map((_description, _index) => (
+                                    <li key={_index}>
+                                        <RightOutlined style={{ alignSelf: "baseline", color: AppColors.activeTextColor }} />
+                                        <Typography style={{ color: "#d4d6db" }}>
+                                            {_description}
+                                        </Typography>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </ProjectDescriptionCard>
 
                     <ul className="project-tool-used">
-                        <li className="project-tool-used-item">
-                            Flask
-                        </li>
-                        <li className="project-tool-used-item">Flask</li>
-                        <li className="project-tool-used-item">Flask</li>
+                        {
+                            projectData.tools?.map((_tool, _index) => (
+                                <li key={_index} className="project-tool-used-item">
+                                    {_tool}
+                                </li>
+                            ))
+                        }
                     </ul>
                     
                     <ul style={{ listStyle: 'none', display: "flex", gap: '1.2rem', padding: 0 }}>
-                        <li>
-                            <GithubFilled style={{ fontSize: 24, color: AppColors.secondaryTextColor }} />
-                        </li>
-                        <li>
-                            <LinkOutlined style={{ fontSize: 24, color: AppColors.secondaryTextColor }} />
-                        </li>
+                        {
+                            projectData?.githubLink && (
+                            <li>
+                                <a href={projectData.githubLink} target="_blank" rel="noopener noreferrer">
+                                    <GithubFilled style={{ fontSize: 24, color: AppColors.lightWhite }} />
+                                </a>
+                            </li>
+                            )
+                        }
+                        {
+                            projectData?.hostedLink && (
+                            <li>
+                                <a href={projectData.hostedLink} target="_blank" rel="noopener noreferrer">
+                                    <LinkOutlined style={{ fontSize: 24, color: AppColors.lightWhite }} />
+                                </a>
+                            </li>
+                            )
+                        }
+                        {
+                            projectData?.documentationLink && (
+                            <li>
+                                <a href={projectData.documentationLink} target="_blank" rel="noopener noreferrer">
+                                    <ContainerOutlined style={{ fontSize: 24, color: AppColors.lightWhite }} />
+                                </a>
+                            </li>
+                            )
+                        }
                     </ul>
 
                 </div>
@@ -110,9 +151,11 @@ interface CustomProjectCardProps {
 const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     background: none;
 
+    .card-project-content * {
+        z-index: 1;
+    }
     .card-project-content {
         z-index: 8;
-        position: absolute;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -122,19 +165,26 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     .project-img-carasoul-container {
         position: absolute;
         max-width: 100%;
+        z-index: 0;
+    }
+    .project-img-carasoul-container img {
+        border-radius: 5px;
     }
 
     .projectName {
         font-size: 26px;
         font-weight: 500;
+
     }
     
     .card-project-content .project-tool-used {
         display: flex;
-        gap: 1rem;
+        flex-wrap: wrap;
+        gap: 0.6rem;
     
         margin: 0;
         padding: 0;
+
     
         list-style: none;
     }
@@ -148,17 +198,15 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     @media only screen and (min-width: 750px) {
         .project-img-carasoul-container {
             right:  ${props => props.isInverted? '10px': 'auto'};
+            left:  ${props => props.isInverted? 'auto': '10px'};
         }
 
         .card-project-content {
-            // align-items: flex-end;
-            
-            // right: 10px;
 
             align-items: ${props => props.isInverted? 'flex-start': 'flex-end'};
 
-            right: ${props => props.isInverted? 'auto': '10px'};
-            left: ${props => props.isInverted? '0px': 'auto'};
+            // right: ${props => props.isInverted? 'auto': '10px'};
+            // left: ${props => props.isInverted? '0px': 'auto'};
         }       
             
     }
@@ -169,6 +217,9 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
     
             left: 0px;
             
+        }
+        .project-img-carasoul-container {
+            padding-left: 1.2rem;
         }
         .project-img-carasoul-container img {
             background: black;
@@ -199,7 +250,7 @@ const ProjectNameTypographyContainer = styled(Typography)<any>`
 `;
 
 const ProjectDescriptionCard = styled(Card)<any>`
-    max-width: 550px;
+    max-width: min(100%, 550px);
 
     // @media only screen and (min-width: 750px) {
         background: #393a3d;

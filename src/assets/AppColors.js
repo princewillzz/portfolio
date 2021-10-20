@@ -5,6 +5,8 @@ export const AppColors = {
 	darkBlue: "#07152f",
 	backgroundBlack: "#282c34",
 	grey: "#424A54",
+	white: '#fff',
+	lightWhite: '#d7d7d7',
 
 	navbarHoverTextColor: "rgb(255, 0, 179)",
 	// navbarHoverTextColor: "#bc956a",
