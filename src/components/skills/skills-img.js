@@ -22,7 +22,11 @@ export const skillImgs = [
         },
         {
             img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-            alt: 'js'
+            alt: 'JavaScript'
+        },
+        {
+            img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+            alt: 'TypeScript'
         },
     ],
     [

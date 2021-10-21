@@ -1,33 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { ProjectListContainerProps } from '../interface/ProjectListContainerProps'
+import { FeatureProjectProps } from '../interface/FeaturedProjectsProps'
+import { OtherProjectDataProps } from '../interface/OtherProjectsProps'
 import { ProjectsProps } from '../interface/ProjectsProps'
 import { SubHeading } from '../SubHeading'
-import { Project } from './Project'
-import { projectsRawData } from './project-data'
+import { featuredProjectsRawData } from './featured-project-data'
+import { FeaturedProject } from './FeaturedProject'
+import { otherProjectsRawData } from './other-project-data'
+import { OtherProject } from './OtherProject'
 
-interface ProjectsResponseData {
-    featured: FeatureProjectResponse[]
-}
-interface FeatureProjectResponse {
-    name: string,
-    tools: string[],
-    descriptionPoints: string[],
-    githubLink?: string,
-    hostedLink?: string,
-    documentationLink?: string,
-    images?: string[]
-}
+
 
 
 export const Projects = ({ sectionBackgroundColor }: ProjectsProps) => {
-    const [projectsResponse, setProjectsResponse] = useState<ProjectsResponseData|null>();
+    const [featureProjects, setFeaturedProjects] = useState<FeatureProjectProps[]>([]);
+
+    const [otherProjects, setOtherProjects] = useState<OtherProjectDataProps[]>([]);
 
     useEffect(() => {
-        setProjectsResponse(projectsRawData)
+        setFeaturedProjects(featuredProjectsRawData.featured);
+
+        setOtherProjects(otherProjectsRawData.featured);
 
         return () => {
-            setProjectsResponse(null);
+            setFeaturedProjects([]);
+            setOtherProjects([]);
         }
     }, [])
 
@@ -40,27 +37,48 @@ export const Projects = ({ sectionBackgroundColor }: ProjectsProps) => {
             
             <ProjectListContainer>
                 {
-                    projectsResponse
-                    ?.featured
+                    featureProjects
                     ?.map((_featuredProjectData, _index) => (
-                        <Project
+                        <FeaturedProject
                             key={_index}
                             projectData={_featuredProjectData}
                             isInverted={ _index % 2? true: false } 
                         />
                     ))
                 }
+
+                <section style={{ marginTop: 50 }}>
+                    <OtherProjectLists>
+                        {
+                            otherProjects
+                            ?.map((_otherProject, _index) => (
+                                <OtherProject 
+                                    projectData={_otherProject} 
+                                />
+                            ))
+                        }
+                    </OtherProjectLists>
+                </section>
             </ProjectListContainer>
 
         </section>
     )
 }
 
-const ProjectListContainer = styled.section<ProjectListContainerProps>`
+const OtherProjectLists = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+
+`;
+
+
+const ProjectListContainer = styled.section`
     margin-top: 2rem;
     width: 85vw;
     margin-inline: auto;
 
     max-width: min(100%, 900px);
+
+    padding-bottom: 2rem;
 
 `;

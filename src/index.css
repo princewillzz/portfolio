@@ -30,45 +30,26 @@ code {
 		monospace;
 }
 
-/* SubHeading for each section */
-/* .subHeading-container {
 
-    display: flex;
-    
-    width: 80vw;
-    margin-inline: auto;
-
-}
-.subHeading {
-	display: flex;
-}
-.subHeading h3 {
-	color: #bc956a;
-	font-size: 16px;
-	font-family: "Courier New", Courier, monospace;
-	text-transform: uppercase;
-	font-weight: 600;
-	margin-top: auto !important;
-	margin-bottom: auto !important;
+div::selection,
+span::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+.ant-typography::-moz-selection, 
+p::-moz-selection { /* Code for Firefox */
+	color: hotpink;
+	background: none;
 }
 
-.section__headline {
-	align-self: center;
 
-	height: 2px;
-	background-color: #bc956a;
+div::selection,
+span::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+.ant-typography::selection,
+p::selection {
+	color: hotpink;
+	background: none;
 }
-.section__headline:nth-child(1) {
-	width: 15px;
-	margin: 6px;
-}
-.section__headline:nth-child(2) {
-	width: 9px;
-	margin-right: 6px;
-}
-.section__headline:nth-child(3) {
-	width: 5em;
-	margin-right: 1rem;
-} */
-
-/* End of subheading for each section */

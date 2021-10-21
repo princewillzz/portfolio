@@ -3,25 +3,15 @@ import { Card, Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AppColors } from '../../assets/AppColors'
+import { FeatureProjectProps } from '../interface/FeaturedProjectsProps'
 import { CustomProjectImageCarasoul } from '../project-img-carasoul/CustomProjectImageCarasoul'
 
 interface ProjectProps {
     isInverted?: boolean,
-    projectData: ProjectDataProps 
+    projectData: FeatureProjectProps 
 }
 
-interface ProjectDataProps {
-    name: string,
-    tools: string[],
-    descriptionPoints: string[],
-    githubLink?: string,
-    hostedLink?: string,
-    documentationLink?: string,
-    images?: string[]
-}
-
-
-export const Project = ({ isInverted, projectData }: ProjectProps) => {
+export const FeaturedProject = ({ isInverted, projectData }: ProjectProps) => {
     
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -83,7 +73,9 @@ export const Project = ({ isInverted, projectData }: ProjectProps) => {
                         {
                             projectData.tools?.map((_tool, _index) => (
                                 <li key={_index} className="project-tool-used-item">
-                                    {_tool}
+                                    <Typography style={{ color: "#d4d6db" }}>
+                                        {_tool}
+                                    </Typography>
                                 </li>
                             ))
                         }
@@ -166,11 +158,6 @@ const CustomProjectCard = styled(Card)<CustomProjectCardProps>`
         list-style: none;
     }
     
-    .card-project-content .project-tool-used-item {
-        color: #d4d6db;
-    
-        /* background: #393a3d; */
-    }
     
     @media only screen and (min-width: 750px) {
        
