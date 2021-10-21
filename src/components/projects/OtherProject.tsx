@@ -1,6 +1,6 @@
-import { CaretRightFilled, FolderOpenOutlined, GithubOutlined, LinkOutlined } from '@ant-design/icons'
+import { FolderOpenOutlined, GithubOutlined, LinkOutlined } from '@ant-design/icons'
 import { Card, message, Typography } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { AppColors } from '../../assets/AppColors'
 import { OtherProjectDataProps } from '../interface/OtherProjectsProps'
@@ -10,6 +10,8 @@ interface ProjectProps {
 }
 
 export const OtherProject = ({ projectData }: ProjectProps) => {
+
+    const [projectNameColor, setProjectNameColor] = useState<string>(AppColors.white);
 
     const openLinkInTab = (URI: string|null|undefined) => {
         if(URI)
@@ -22,6 +24,8 @@ export const OtherProject = ({ projectData }: ProjectProps) => {
         <OtherProjectContainer
             bordered={false}
             onClick={() => openLinkInTab(projectData.hostedLink || projectData.githubLink)}
+            onMouseOver={() => setProjectNameColor(AppColors.activeTextColor)}
+            onMouseOut={() => setProjectNameColor(AppColors.white)}
         >
             <OtherProjectHeadingContainer>
                 <FolderOpenOutlined  style={{ fontSize: 30, color: AppColors.activeTextColor }}/>
@@ -46,7 +50,7 @@ export const OtherProject = ({ projectData }: ProjectProps) => {
                 </span>
             </OtherProjectHeadingContainer>
 
-            <CustomOtherProjectHeading textcolor={AppColors.white}>
+            <CustomOtherProjectHeading textcolor={projectNameColor}>
                 {projectData.name}
             </CustomOtherProjectHeading>
 
@@ -56,7 +60,7 @@ export const OtherProject = ({ projectData }: ProjectProps) => {
                     .descriptionPoints
                     ?.map((_description, _index) => (
                         <li key={_index}>
-                            <CaretRightFilled style={{ alignSelf: "baseline", color: AppColors.activeTextColor }} />
+                            {/* <CaretRightFilled style={{ alignSelf: "baseline", color: AppColors.activeTextColor }} /> */}
                             <Typography style={{ color: "#d4d6db" }}>
                                 {_description}
                             </Typography>
@@ -128,12 +132,17 @@ const OtherProjectHeadingContainer = styled.div`
 
 interface CustomOtherProjectHeadingProps {
     textcolor?: string
+    highlightcolor?: string
 }
 
 const CustomOtherProjectHeading = styled(Typography)<CustomOtherProjectHeadingProps>`
     font-size: 22px;
     font-weight: 600;
+    
+    transition: all 450ms;
+
     color: ${props => props.textcolor};
+
 `;
 
 

@@ -44,7 +44,7 @@ export const featuredProjectsRawData = Object.freeze({
                 '/img/g6.png',
                 '/img/g7.png',
             ],
-            tools: ['Java11', 'Spring', 'ReactJS', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker'],
+            tools: ['Java11', 'Spring-MVC', 'ReactJS', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker'],
             githubLink: 'https://github.com/princewillzz/GeoParking',
             hostedLink: 'https://geoparking.netlify.app/'
         },
