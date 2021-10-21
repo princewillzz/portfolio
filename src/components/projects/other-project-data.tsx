@@ -6,27 +6,28 @@ export const otherProjectsRawData = Object.freeze({
                 `Built a Web app to view live Crypto Coins updates such as, price, volume used, change percentage, etc`
             ],
             tools: ['React-JS', 'Material-UI', 'ChartJS'],
-            githubLink: 'https://github.com/princewillzz/untangledchat',
+            githubLink: 'https://github.com/princewillzz/crypto_analysis_app',
             hostedLink: 'https://crypto-analysis.netlify.app/'
         },
         {
-            name: 'Geo-Parking',
+            name: 'My Code Helper',
             descriptionPoints: [
-                'Built a full-stack distributed web app to assist people to find nearby parking spots and rent theirland as a parking spot',
-                'Built a full-stack distributed web app to assist people to find nearby parking spots and rent theirland as a parking spot',
+                `Built a CLI to automate tedious tasks like reading PDF/Docx files,
+                searching and reading Wikipedia results in CLI, Corona Updates,
+                converting images to PDF, creating/deleting files, etc
+                `
             ],
-            tools: ['Java11', 'MongoDB', 'Redis', 'Docker'],
-            githubLink: 'https://github.com/princewillzz/GeoParking',
-            hostedLink: 'https://geoparking.netlify.app/'
+            tools: ['Python'],
+            githubLink: 'https://github.com/princewillzz/my_code_helper'
         },
         {
-            name: 'Covid-19 Tracker',
+            name: 'Password Manager',
             descriptionPoints: [
-                'Web app to view live Covid-19 updates with interactive graphs using ChartJS and material-UI using open-source mathdroid api',
+                `Web App to easily manage credentials for all your accounts 
+                on various platforms with a single master password`
             ],
-            tools: ['React-JS', 'Material-UI'],
-            githubLink: 'https://github.com/princewillzz/covid-19-tracker',
-            hostedLink: 'https://naughty-kare-16921a.netlify.app/',
+            tools: ['Python', 'Django', 'sqlite3'],
+            githubLink: 'https://github.com/princewillzz/password_manager'
         }
     ]
 })
