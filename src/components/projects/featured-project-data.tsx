@@ -1,9 +1,7 @@
-export const projectsRawData = Object.freeze({
+export const featuredProjectsRawData = Object.freeze({
     featured: [
         {
             name: 'UntangledChat',
-            startData: '',
-            endData: '',
             descriptionPoints: [
                 'Developed a Messaging app with a focus on scalability and privacy',
                 'Used RabbitMQ forrouting messages to associated WebSocket to decouple systems and easily scale WebSockets horizontally',
@@ -30,8 +28,6 @@ export const projectsRawData = Object.freeze({
         },
         {
             name: 'Geo-Parking',
-            startData: '',
-            endData: '',
             descriptionPoints: [
                 'Built a full-stack distributed web app to assist people to find nearby parking spots and rent theirland as a parking spot',
                 'Integrated map and geocoding search to enhance interactivity',
@@ -54,8 +50,6 @@ export const projectsRawData = Object.freeze({
         },
         {
             name: 'Covid-19 Tracker',
-            startData: '',
-            endData: '',
             descriptionPoints: [
                 'Web app to view live Covid-19 updates with interactive graphs using ChartJS and material-UI using open-source mathdroid api',
                 
