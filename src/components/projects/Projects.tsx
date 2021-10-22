@@ -1,5 +1,7 @@
+import { Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { AppColors } from '../../assets/AppColors'
 import { FeatureProjectProps } from '../interface/FeaturedProjectsProps'
 import { OtherProjectDataProps } from '../interface/OtherProjectsProps'
 import { ProjectsProps } from '../interface/ProjectsProps'
@@ -48,6 +50,9 @@ export const Projects = ({ sectionBackgroundColor }: ProjectsProps) => {
                 }
 
                 <section style={{ marginTop: 50 }}>
+                    <OtherProjectHeadingTypographyContainer textcolor={AppColors.activeTextColor}>
+                        Few More Things I Built
+                    </OtherProjectHeadingTypographyContainer>
                     <OtherProjectLists>
                         {
                             otherProjects
@@ -65,12 +70,6 @@ export const Projects = ({ sectionBackgroundColor }: ProjectsProps) => {
     )
 }
 
-const OtherProjectLists = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
-
-`;
-
 
 const ProjectListContainer = styled.section`
     margin-top: 2rem;
@@ -80,5 +79,18 @@ const ProjectListContainer = styled.section`
     max-width: min(100%, 900px);
 
     padding-bottom: 2rem;
+
+`;
+
+const OtherProjectHeadingTypographyContainer = styled(Typography)<any>`
+    font-size: 26px;
+    color: ${props => props.textcolor};
+    text-align: center;
+    margin-bottom: 1rem;
+`;
+
+const OtherProjectLists = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
 
 `;

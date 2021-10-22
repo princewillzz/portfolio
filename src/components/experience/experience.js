@@ -5,7 +5,9 @@ export const experienceRawData = Object.freeze({
             jobRole: "Backend Engineer",
             description: [
                 "Worked on a POS software that manages day to day functionality of restaurants",
-                "Developed order management APIs and UI using Express, ReactJS, MongoDB, facilitating execution of orders on various levels (waiter, chef, manager, etc)"
+                "Developed order management APIs and UI using Express, ReactJS, MongoDB, facilitating execution of orders on various levels (waiter, chef, manager, etc)",
+                "Built authentication flow using firebase for both Client and backend app",
+                "Implemented custom Logging mechanism with size and time based backup"
             ],
             startDate: "Aug 2021",
             endDate: "Present"

@@ -46,7 +46,8 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
         <ExperienceContainer
             id="Experience"
             style={{
-                backgroundColor: sectionBackgroundColor
+                backgroundColor: sectionBackgroundColor,
+                minHeight: '50vh'
                 // backgroundColor: "#fff"
             }}
         >
