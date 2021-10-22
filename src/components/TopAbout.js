@@ -13,7 +13,16 @@ export default function TopAbout({ sectionBackgroundColor }) {
 				id="About"
 			>
 				<SubHeading heading={"About"} maxWidth={'1050px'} />
-				<div className="about-content-container">
+				<div 
+					data-aos="fade-up"
+					data-aos-delay="50"
+					data-aos-duration="1000"
+					data-aos-easing="ease-in-out"
+					data-aos-mirror="true"
+					data-aos-once="false"
+
+					className="about-content-container"
+				>
 {/* 
 					<div className="subHeading about-subHeading">
 						<div className="section__headline"></div>

@@ -26,6 +26,12 @@ export const OtherProject = ({ projectData }: ProjectProps) => {
             onClick={() => openLinkInTab(projectData.hostedLink || projectData.githubLink)}
             onMouseOver={() => setProjectNameColor(AppColors.activeTextColor)}
             onMouseOut={() => setProjectNameColor(AppColors.white)}
+
+            data-aos={"zoom-in"}
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="false"
         >
             <OtherProjectHeadingContainer>
                 <FolderOpenOutlined  style={{ fontSize: 30, color: AppColors.activeTextColor }}/>

@@ -96,7 +96,15 @@ export const SkillsContainer = ({ sectionBackgroundColor }: SkillsProps) => {
 
                     <SubHeading heading={"Tools And Technologies"} maxWidth={'900px'}/>
 
-					<div className="skills-container">
+					<div
+                        data-aos="fade-up"
+                        data-aos-delay="50"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out"
+                        data-aos-mirror="true"
+                        data-aos-once="false"
+                        
+                        className="skills-container">
                         <ul className="skills-categories">
                             {toBeRenderedItems}
                         </ul>
