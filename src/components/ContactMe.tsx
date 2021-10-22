@@ -1,3 +1,4 @@
+import { GithubOutlined, LinkedinFilled, MailOutlined } from "@ant-design/icons";
 import React from "react";
 import styled from 'styled-components';
 import { SubHeading } from "./SubHeading";
@@ -46,14 +47,14 @@ export default function ContactMe({ sectionBackgroundColor }: any) {
 										rel="noopener noreferrer"
 										href="https://www.linkedin.com/in/harsh2212/"
 									>
-										<i className="fab fa-linkedin-in"></i>
+										<LinkedinFilled />
 									</a>
 								</span>
 							</li>
 							<li className="footer-nav-link">
 								<span>
 									<a href="mailto:harshtiwariai@gmail.com">
-										<i className="fas fa-envelope"></i>
+										<MailOutlined />
 									</a>
 								</span>
 							</li>
@@ -64,7 +65,7 @@ export default function ContactMe({ sectionBackgroundColor }: any) {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<i className="fab fa-github"></i>
+										<GithubOutlined />
 									</a>
 								</span>
 							</li>
@@ -99,8 +100,6 @@ const ContactMeContainer = styled.section`
 		display: flex;
 		flex-direction: column;
 
-		/* background-color: #b18597; */
-
 		color: #ffff;
 		text-align: center;
 		font-family: "Rubik", sans-serif;
@@ -129,13 +128,10 @@ const ContactMeContainer = styled.section`
 	}
 	button.say-hello-btn {
 		font-weight: 600;
-		/* color: #382b22; */
 		color: rgb(255, 255, 255);
 		text-transform: uppercase;
 		padding: 1.25em 2em;
-		/* background: #fff0f0; */
 		background: #494979;
-		/* border: 2px solid #b18597; */
 		border: 2px solid #494979;
 		border-radius: 0.75em;
 		transform-style: preserve-3d;
@@ -151,24 +147,19 @@ const ContactMeContainer = styled.section`
 		left: 0;
 		right: 0;
 		bottom: 0;
-		/* background: #f9c4d2; */
 		background: #cfd9f0;
 		border-radius: inherit;
-		/* box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2; */
 		transform: translate3d(0, 0.75em, -1em);
 		transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
 			box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 	}
 	button.say-hello-btn:hover {
-		/* background: #ffe9e9; */
 		transform: translate(0, 0.25em);
 	}
 	button.say-hello-btn:hover::before {
-		/* box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2; */
 		transform: translate3d(0, 0.5em, -1em);
 	}
 	button.say-hello-btn:active {
-		/* background: #ffe9e9; */
 		transform: translate(0em, 0.75em);
 	}
 	button.say-hello-btn:active::before {
@@ -176,26 +167,14 @@ const ContactMeContainer = styled.section`
 		transform: translate3d(0, 0, -1em);
 	}
 
-	/* Footer */
+	// Footer 
 	.footer-container {
-		/* position: fixed;
-		bottom: 0;
-		width: 100%;
-		height: 60px; */
-		/* position: absolute; */
 		background: #272727;
 		height: 5rem;
-		/* margin-top: -200px; */
-		/* position: relative; */
 	}
 
 	.footer-container section {
 		text-align: center;
-		/* margin-inline: auto; */
-		/* width: 500px; */
-		/* background-color: #ffe3e2; */
-		/* display: flex;
-		justify-content: center; */
 	}
 
 	.footer-nav-links {
@@ -205,10 +184,20 @@ const ContactMeContainer = styled.section`
 		list-style: none;
 		justify-content: center;
 	}
-
-	.footer-nav-link span i {
-		font-size: 20px;
-		color: #999999;
+	.footer-nav-link {
+		cursor: pointer;
 	}
+
+	.footer-nav-link .anticon {
+		font-size: 24px;
+		color: #999999;
+
+		transition: all 350ms;
+
+	}
+
+    .footer-nav-link:hover .anticon {
+        transform: scale(2.2) translateY(-10px);
+    }
 
 `;

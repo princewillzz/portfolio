@@ -44,6 +44,13 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
 
     return (
         <ExperienceContainer
+            data-aos="flip-left"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+
             id="Experience"
             style={{
                 backgroundColor: sectionBackgroundColor,
