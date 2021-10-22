@@ -77,7 +77,9 @@ export const OtherProject = ({ projectData }: ProjectProps) => {
                         .tools
                         ?.map((_tool, _index) => (
                             <li key={_index}>
-                                {_tool}
+                                <Typography style={{ color: AppColors.white }}>
+                                    {_tool}
+                                </Typography>
                             </li>
                         ))
                     }
