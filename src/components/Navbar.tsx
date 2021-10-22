@@ -1,12 +1,34 @@
+import { MenuFoldOutlined } from "@ant-design/icons";
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import styled from 'styled-components';
 import { AppColors } from "../assets/AppColors";
+
+const navlinksData = [
+	{
+		href: "About",
+		linkContent: "About"
+	},
+	{
+		href: "Experience",
+		linkContent: "Experience"
+	},
+	{
+		href: "Projects",
+		linkContent: "Projects"
+	},
+	{
+		href: "ContactMe",
+		linkContent: "Contact Me"
+	},
+]
 
 export default function Navbar({ sectionBackgroundColor }: any) {
 	// const [prevScrollpos, setPrevScrollpos] = useState(0);
 	const prevScrollpos = useRef(0);
 	const [visible, setVisible] = useState(true);
 	const [makeOpacity, setMakeOpacity] = useState(false);
+	const [isNavbarDrawerOpen, setIsNavbarDrawerOpen] = useState<boolean>(false);
+
 
 	const handleScroll = useCallback(() => {
 		const currentScrollPos = window.pageYOffset;
@@ -32,44 +54,62 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		};
 	}, [handleScroll]);
 
-	// console.log(visible);
+	const _renderNavlinkItems = () => navlinksData.map((_navlinkData, _index) => (
+		<div className="nav-link" key={_index}>
+			<a href={`#${_navlinkData.href}`} onClick={() => handleChangeIsNavbarDrawerOpen(false)}>
+				{_navlinkData.linkContent}
+			</a>
+		</div>
+	))
+
+	const handleChangeIsNavbarDrawerOpen = (_isNavbarDrawerOpen: boolean) => {
+		setIsNavbarDrawerOpen(_isNavbarDrawerOpen)
+	}
+
+
 
 	return (
-		<NavbarContainer textHoverColor={AppColors.navbarHoverTextColor}>
+		<NavbarContainer 
+			textHoverColor={AppColors.navbarHoverTextColor}
+		>
 			<nav
 				style={{
 					backgroundColor: sectionBackgroundColor
 				}}
-				className={`navbar ${!visible && "navbar--hidden"} ${
-					makeOpacity && "navbar__opacity"
-				}`}
+				className={`
+					navbar
+					${!visible && "navbar--hidden"} 
+					${makeOpacity && "navbar__opacity"}`
+				}
 			>
 				<section className="logo-title">
-					<h1>"H</h1>
+						<img src={"/logo.png"} height={70} width={70} alt="HT"/>
 				</section>
-				<section className="nav-links">
 
-					<div className="nav-link">
-						<a className="link" href="#About">
-							About
-						</a>
-					</div>
+				<section className="navbar-collapse-container">
 
-					<div className="nav-link">
-						<a href="#Experience">
-							Experience
-						</a>
-					</div>
-
-					<div className="nav-link">
-						<a href="#Projects">Projects</a>
-					</div>
-
-					<div className="nav-link">
-						<a href="#ContactMe">Contact Me</a>
+					<div className="navbar-collapse-btn">
+						<MenuFoldOutlined 
+							onClick={() => handleChangeIsNavbarDrawerOpen(!isNavbarDrawerOpen)}
+							style={{ fontSize: 28 }} 
+						/>
 					</div>
 					
+					{/* <Drawer 
+						title={null} 
+						placement="right" 
+						visible={false} 
+						closable={false}
+					> */}
+						
+					<section className={`nav-links ${isNavbarDrawerOpen? 'open-sidebar': ''}`} id="mySidenav">
+						{_renderNavlinkItems()}
+					</section>
+					
+					{/* </Drawer> */}
+
 				</section>
+
 			</nav>
 		</NavbarContainer>
 	);
@@ -80,47 +120,7 @@ interface NavbarProps {
 }
 const NavbarContainer = styled.div<NavbarProps>`
 
-	.navbar {
-		// background-color: red !important;
-		height: 9vh;
-
-		display: flex;
-		justify-content: space-between;
-		/* justify-content: center; */
-		align-items: center;
-		color: #fff;
-		/* padding-inline: 5rem; */
-
-		flex-flow: row nowrap;
-		position: fixed;
-		width: 100%;
-		z-index: 999;
-		margin: 0 auto;
-		padding: 0;
-
-		top: 0;
-		transition: top 0.6s;
-	}
-
-	.navbar__opacity {
-		opacity: 0.6;
-	}
-
-	.navbar--hidden {
-		top: -100px;
-	}
-
-	.logo-title {
-		margin-left: 5rem;
-	}
-	.nav-links {
-		margin-right: 5rem;
-		display: flex;
-		gap: 3rem;
-		/* justify-content: center;
-		align-items: center; */
-	}
-
+	// navbar links
 	.nav-link a {
 		color: #fff;
 		background-color: transparent;
@@ -135,6 +135,117 @@ const NavbarContainer = styled.div<NavbarProps>`
 	.nav-link a:hover {
 		color: ${props => props.textHoverColor};
 	}
+
+
+	.navbar {
+		height: 70px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		color: #fff;
+
+		flex-flow: row nowrap;
+		position: fixed;
+		width: 100%;
+
+		padding: 0;
+		margin: 0 auto;
+		top: 0;
+		z-index: 999;       
+		transition: top 0.6s;
+
+	}
+
+	.navbar__opacity {
+		opacity: 0.6;
+	}
+
+	.navbar--hidden {
+		top: -100px;
+	}
+
+
+
+
+	/* Large Screen */
+	@media only screen and (min-width: 800px) {
+			
+		.logo-title {
+			margin-left: 5rem;
+			opacity: 1 !important;
+		}
+		
+		.nav-links {
+			margin-right: 5rem;
+		
+			display: flex;
+			gap: 3rem;
+		}
+
+
+		.navbar-collapse-btn {
+			display: none;
+		}
+	}
+
+
+	/* Small Screen */
+	@media only screen and (max-width: 800px) {
+		.logo-title {
+			margin-left: 1.5rem;
+		}
+		
+		.navbar-collapse-container {
+			margin-right: 1.5rem;
+		}
+		.navbar-collapse-btn {
+			z-index: 99999 !important;
+			position: relative;
+		}
+
+		/* .nav-links {
+			display: none;
+		} */
+
+		.nav-links {
+			height: 100%; /* 100% Full-height */
+			width: 0; /* 0 width - change this with JavaScript */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Stay on top */
+			top: 0; /* Stay at the top */
+			right: 0;
+			background-color: #2a3774; 
+			overflow-x: hidden; /* Disable horizontal scroll */
+			padding-top: 60px; /* Place content 60px from the top */
+			transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+			/* text-align: center; */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+
+		}
+		
+		.open-sidebar {
+			width: min(80%, 500px);
+
+			opacity: 0.9;
+		}
+
+		.nav-link:first-child {
+			margin-top: 1rem;
+		}
+		.nav-link a {
+			font-size: 32px !important;
+			/* color: rgb(228, 110, 0) !important; */
+			/* color: hotpink !important; */
+		}
+	}
+
+
 
 	/* Fade in */
 	.nav-link a::after {

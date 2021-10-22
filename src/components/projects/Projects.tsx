@@ -58,6 +58,7 @@ export const Projects = ({ sectionBackgroundColor }: ProjectsProps) => {
                             otherProjects
                             ?.map((_otherProject, _index) => (
                                 <OtherProject 
+                                    key={_index}
                                     projectData={_otherProject} 
                                 />
                             ))
