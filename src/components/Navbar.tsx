@@ -1,25 +1,30 @@
-import { MenuFoldOutlined } from "@ant-design/icons";
-import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { DownloadOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from 'styled-components';
 import { AppColors } from "../assets/AppColors";
 
 const navlinksData = [
 	{
+		className: 'about',
 		href: "About",
 		linkContent: "About"
 	},
 	{
+		className: 'experience',
 		href: "Experience",
 		linkContent: "Experience"
 	},
 	{
+		className: 'projects',
 		href: "Projects",
 		linkContent: "Projects"
 	},
 	{
+		className: 'contact-me',
 		href: "ContactMe",
 		linkContent: "Contact Me"
-	},
+	}
 ]
 
 export default function Navbar({ sectionBackgroundColor }: any) {
@@ -46,7 +51,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		setVisible(visible);
 	}, []);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 
 		return () => {
@@ -55,7 +60,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 	}, [handleScroll]);
 
 	const _renderNavlinkItems = () => navlinksData.map((_navlinkData, _index) => (
-		<div className="nav-link" key={_index}>
+		<div className={`nav-link ${_navlinkData.className}`} key={_index}>
 			<a href={`#${_navlinkData.href}`} onClick={() => handleChangeIsNavbarDrawerOpen(false)}>
 				{_navlinkData.linkContent}
 			</a>
@@ -77,7 +82,9 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 				className={`navbar ${!visible? "navbar--hidden": ''} ${makeOpacity? "navbar__opacity": ''}`}
 			>
 				<section className="logo-title">
-						<img src={"/logo.png"} height={70} width={70} alt="HT"/>
+						<a href="/">
+							<img src={"/logo.png"} height={70} width={70} alt="HT"/>
+						</a>
 				</section>
 
 				<section className={`navbar-collapse-container`}>
@@ -89,18 +96,26 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 						/>
 					</div>
 					
-					{/* <Drawer 
-						title={null} 
-						placement="right" 
-						visible={false} 
-						closable={false}
-					> */}
-						
 					<section className={`nav-links ${isNavbarDrawerOpen? 'open-sidebar': ''}`}>
 						{_renderNavlinkItems()}
+						
+						<a 
+							className={`nav-link resume`} 
+							href="/Harsh_Tiwari_Resume.pdf" 
+							target="_blank" 
+							rel="noopener noreferrer"
+						>
+							<Button
+								onClick={() => handleChangeIsNavbarDrawerOpen(false)}
+								ghost 
+								danger
+								className="resume-ant-btn"
+							>
+								Resume
+								<DownloadOutlined />
+							</Button>
+						</a>
 					</section>
-					
-					{/* </Drawer> */}
 
 				</section>
 
@@ -108,6 +123,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		</NavbarContainer>
 	);
 }
+
 
 interface NavbarProps {
 	textHoverColor: string
@@ -161,10 +177,13 @@ const NavbarContainer = styled.div<NavbarProps>`
 	}
 
 
+	.resume-ant-btn {
+		transition: 250ms;
+	}
 
 
 	/* Large Screen */
-	@media only screen and (min-width: 800px) {
+	@media only screen and (min-width: 850px) {
 			
 		.logo-title {
 			margin-left: 5rem;
@@ -186,7 +205,7 @@ const NavbarContainer = styled.div<NavbarProps>`
 
 
 	/* Small Screen */
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 850px) {
 		.logo-title {
 			margin-left: 1.5rem;
 		}
@@ -243,6 +262,14 @@ const NavbarContainer = styled.div<NavbarProps>`
 			font-size: 32px !important;
 			/* color: rgb(228, 110, 0) !important; */
 			/* color: hotpink !important; */
+		}
+		.resume-ant-btn {
+			margin-top: 2rem;
+
+			height: 55px;
+			width: 160px;
+			padding: 6.4px 15px;
+			font-size: 22px;
 		}
 	}
 

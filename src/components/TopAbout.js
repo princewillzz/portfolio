@@ -36,17 +36,6 @@ export default function TopAbout({ sectionBackgroundColor }) {
 						</div>
 					</div>
 					
-					{/* <div className="subHeading tools-tech-subHeading">
-						<div className="section__headline"></div>
-						<div className="section__headline"></div>
-						<div className="section__headline"></div>
-						<h3>Tools And Technologies</h3>
-					</div>
-
-						
-					<div className="skills-container">
-						<SkillsContainer />
-					</div> */}
 				</div>
 			</section>
 		</>

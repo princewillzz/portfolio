@@ -33,10 +33,9 @@ export const FeaturedProject = ({ isInverted, projectData }: ProjectProps) => {
             isinverted={isInverted? 'true': 'false'}
 
             data-aos={"fade-up"}
-            data-aos-delay="50"
-            data-aos-duration="1200"
+            data-aos-delay="60"
+            data-aos-duration="1400"
             data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
             data-aos-once="false"
         >
             <section >

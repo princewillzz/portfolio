@@ -7,13 +7,15 @@
 	/* background-color: aqua; */
 
 	max-width: 1000px;
+
+	padding-block: 2rem;
+	gap: 1.5rem;
 }
 
 .about-subHeading {
 	grid-area: header;
 	/* background-color: #fff; */
 }
-
 
 
 .decription-container {
@@ -34,24 +36,16 @@
 }
 .profile-picture-container {
 	grid-area: profilePicture;
-
-	/* temp */
-	/* background-color: rgb(168, 54, 159); */
 }
-
-/* Skills Sections */
-.skills-container {
-	/* grid-area: skills; */
-
-	/* max-width: 90%; */
-}
-
-/*end of skills sections*/
 
 .profile-picture-container .profile img {
+	min-width: 200px;
+	min-height: 200px;
+
 	width: 100%;
 	height: auto;
 	max-width: 300px;
+	
 
 	border-radius: 8px;
 
@@ -87,6 +81,10 @@
 
 /* Small Screen */
 @media only screen and (max-width: 950px) {
+	.top-about-container {
+		/* min-height: 90vh; */
+		padding-top: 10vh;
+	}
 	.about-content-container {
 		width: 80%;
 		/* padding-inline: 2rem; */
@@ -104,4 +102,5 @@
 	.profile-picture-container {
 		place-self: center;
 	}
+
 }
