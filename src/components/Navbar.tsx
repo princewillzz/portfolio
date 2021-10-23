@@ -109,6 +109,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 								onClick={() => handleChangeIsNavbarDrawerOpen(false)}
 								ghost 
 								danger
+								type="dashed"
 								className="resume-ant-btn"
 							>
 								Resume
