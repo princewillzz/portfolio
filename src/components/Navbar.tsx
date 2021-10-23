@@ -66,8 +66,6 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		setIsNavbarDrawerOpen(_isNavbarDrawerOpen)
 	}
 
-
-
 	return (
 		<NavbarContainer 
 			textHoverColor={AppColors.navbarHoverTextColor}
@@ -76,19 +74,15 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 				style={{
 					backgroundColor: sectionBackgroundColor
 				}}
-				className={`
-					navbar
-					${!visible && "navbar--hidden"} 
-					${makeOpacity && "navbar__opacity"}`
-				}
+				className={`navbar ${!visible? "navbar--hidden": ''} ${makeOpacity? "navbar__opacity": ''}`}
 			>
 				<section className="logo-title">
 						<img src={"/logo.png"} height={70} width={70} alt="HT"/>
 				</section>
 
-				<section className="navbar-collapse-container">
+				<section className={`navbar-collapse-container`}>
 
-					<div className="navbar-collapse-btn">
+					<div className={`navbar-collapse-btn ${isNavbarDrawerOpen? 'rotated-menu-drawer-btn': ''}`}>
 						<MenuFoldOutlined 
 							onClick={() => handleChangeIsNavbarDrawerOpen(!isNavbarDrawerOpen)}
 							style={{ fontSize: 28 }} 
@@ -102,7 +96,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 						closable={false}
 					> */}
 						
-					<section className={`nav-links ${isNavbarDrawerOpen? 'open-sidebar': ''}`} id="mySidenav">
+					<section className={`nav-links ${isNavbarDrawerOpen? 'open-sidebar': ''}`}>
 						{_renderNavlinkItems()}
 					</section>
 					
@@ -153,7 +147,7 @@ const NavbarContainer = styled.div<NavbarProps>`
 		padding: 0;
 		margin: 0 auto;
 		top: 0;
-		z-index: 999;       
+		z-index: 9;       
 		transition: top 0.6s;
 
 	}
@@ -201,13 +195,20 @@ const NavbarContainer = styled.div<NavbarProps>`
 			margin-right: 1.5rem;
 		}
 		.navbar-collapse-btn {
-			z-index: 99999 !important;
+			z-index: 10 !important;
 			position: relative;
 		}
+		.navbar-collapse-btn {
+			transform: rotate(90);
+		}
 
-		/* .nav-links {
-			display: none;
-		} */
+		.navbar-collapse-btn .anticon {
+			transition: 600ms;
+		}
+		.rotated-menu-drawer-btn .anticon {
+			transform: rotate(-180deg);
+		}
+
 
 		.nav-links {
 			height: 100%; /* 100% Full-height */
