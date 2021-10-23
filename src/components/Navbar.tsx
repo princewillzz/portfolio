@@ -1,5 +1,5 @@
 import { MenuFoldOutlined } from "@ant-design/icons";
-import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from 'styled-components';
 import { AppColors } from "../assets/AppColors";
 
@@ -16,6 +16,10 @@ const navlinksData = [
 		href: "Projects",
 		linkContent: "Projects"
 	},
+	// {
+	// 	href: "Statistics",
+	// 	linkContent: "Statistics"
+	// },
 	{
 		href: "ContactMe",
 		linkContent: "Contact Me"
@@ -46,7 +50,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 		setVisible(visible);
 	}, []);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 
 		return () => {
@@ -77,7 +81,9 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 				className={`navbar ${!visible? "navbar--hidden": ''} ${makeOpacity? "navbar__opacity": ''}`}
 			>
 				<section className="logo-title">
-						<img src={"/logo.png"} height={70} width={70} alt="HT"/>
+						<a href="/">
+							<img src={"/logo.png"} height={70} width={70} alt="HT"/>
+						</a>
 				</section>
 
 				<section className={`navbar-collapse-container`}>
@@ -89,18 +95,9 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 						/>
 					</div>
 					
-					{/* <Drawer 
-						title={null} 
-						placement="right" 
-						visible={false} 
-						closable={false}
-					> */}
-						
 					<section className={`nav-links ${isNavbarDrawerOpen? 'open-sidebar': ''}`}>
 						{_renderNavlinkItems()}
 					</section>
-					
-					{/* </Drawer> */}
 
 				</section>
 

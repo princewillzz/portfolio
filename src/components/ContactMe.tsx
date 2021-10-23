@@ -1,25 +1,52 @@
-import { GithubOutlined, LinkedinFilled, MailOutlined } from "@ant-design/icons";
+import { Typography } from 'antd';
 import React from "react";
 import styled from 'styled-components';
+import { AppColors } from "../assets/AppColors";
 import { SubHeading } from "./SubHeading";
 
 export default function ContactMe({ sectionBackgroundColor }: any) {
 	return (
 		<>
-			<ContactMeContainer
-				style={{
-					backgroundColor: sectionBackgroundColor,
-				}}
+			<section
+				style={{ backgroundColor: sectionBackgroundColor, paddingTop: '2rem' }}
 				id="ContactMe"
 			>
-				<SubHeading heading={"Get In Touch"} />
-				<div className="contact-me-content">
+				<SubHeading heading={"Get In Touch"} maxWidth={'900px'}/>
+				
+				<ContactMeWrapper>
+					<section>
+						<SubContentHeadingTypographyContainer textcolor={AppColors.white}>
+							Drop me a line to say hello or talk about
+							opportunities
+						</SubContentHeadingTypographyContainer>
+						<ContactMeContainer>
+							<HelloBtnWrapper>
+								<a
+									href="mailto:harshtiwariai@gmail.com"
+									style={{
+										textDecoration: "none",
+										color: "#ffff",
+									}}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<button className={"say-hello-btn"}>
+										Say Hello
+									</button>
+								</a>
+							</HelloBtnWrapper>
+						</ContactMeContainer>
+					</section>
+				</ContactMeWrapper>
+
+				{/* <div className="contact-me-content">
 					<div className="contact-container">
 						<h1 className="heading">
 							Drop me a line to say hello or talk about
 							opportunities
 						</h1>
-						<div className="hello-btn-container">
+						
+						<HelloBtnWrapper>
 							<a
 								href="mailto:harshtiwariai@gmail.com"
 								style={{
@@ -33,87 +60,45 @@ export default function ContactMe({ sectionBackgroundColor }: any) {
 									Say Hello
 								</button>
 							</a>
-						</div>
-					</div>
-				</div>
+						</HelloBtnWrapper>
 
-				<footer className="footer-container">
-					<section>
-						<ul className="footer-nav-links">
-							<li className="footer-nav-link">
-								<span>
-									<a
-										target="_blank"
-										rel="noopener noreferrer"
-										href="https://www.linkedin.com/in/harsh2212/"
-									>
-										<LinkedinFilled />
-									</a>
-								</span>
-							</li>
-							<li className="footer-nav-link">
-								<span>
-									<a href="mailto:harshtiwariai@gmail.com">
-										<MailOutlined />
-									</a>
-								</span>
-							</li>
-							<li className="footer-nav-link">
-								<span>
-									<a
-										href="https://github.com/princewillzz"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<GithubOutlined />
-									</a>
-								</span>
-							</li>
-						</ul>
-					</section>
-				</footer>
-			</ContactMeContainer>
+					</div>
+				</div> */}
+
+				{/* <Footer /> */}
+			</section>
 		</>
 	);
 }
 
-const ContactMeContainer = styled.section`
-	
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 60vh;
-	padding-top: 8vh;
+const ContactMeWrapper = styled.section`
+	margin-top: 2rem;
+	width: 85vw;
+	margin-inline: auto;
 
-	.contact-me-content {
+	max-width: min(100%, 900px);
 
-		position: relative;
-		display: flex;
-		place-items: center;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		width: 80%;
-		margin-inline: auto;
-	}
-	.contact-container {
-		display: flex;
-		flex-direction: column;
+	padding-bottom: 2rem;
 
-		color: #ffff;
-		text-align: center;
-		font-family: "Rubik", sans-serif;
-	}
-	.contact-container .heading {
-		color: #fff;
 
-		margin-top: 1rem;
-		margin-bottom: 2rem;
-	}
 
-	.hello-btn-container {
-		margin-bottom: 1rem;
-	}
+`;
+
+const SubContentHeadingTypographyContainer = styled(Typography)<any>`
+    font-size: 24px;
+    color: ${props => props.textcolor};
+    text-align: center;
+    margin-bottom: 1rem;
+`;
+
+const ContactMeContainer = styled.div`
+	text-align: center;
+	padding-top: 1rem;
+`;
+
+const HelloBtnWrapper = styled.div`
+
+	margin-bottom: 1rem;
 
 	button {
 		position: relative;
@@ -166,38 +151,5 @@ const ContactMeContainer = styled.section`
 		box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
 		transform: translate3d(0, 0, -1em);
 	}
-
-	// Footer 
-	.footer-container {
-		background: #272727;
-		height: 5rem;
-	}
-
-	.footer-container section {
-		text-align: center;
-	}
-
-	.footer-nav-links {
-		margin-top: 2rem;
-		display: flex;
-		gap: 2rem;
-		list-style: none;
-		justify-content: center;
-	}
-	.footer-nav-link {
-		cursor: pointer;
-	}
-
-	.footer-nav-link .anticon {
-		font-size: 24px;
-		color: #999999;
-
-		transition: all 350ms;
-
-	}
-
-    .footer-nav-link:hover .anticon {
-        transform: scale(2.2) translateY(-10px);
-    }
 
 `;
