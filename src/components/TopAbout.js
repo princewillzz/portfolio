@@ -23,14 +23,6 @@ export default function TopAbout({ sectionBackgroundColor }) {
 
 					className="about-content-container"
 				>
-{/* 
-					<div className="subHeading about-subHeading">
-						<div className="section__headline"></div>
-						<div className="section__headline"></div>
-						<div className="section__headline"></div>
-						<h3>About</h3>
-					</div> */}
-					
 					 
 					<div className="decription-container">
 						<h1>Hi, I'm Harsh Tiwari</h1>
