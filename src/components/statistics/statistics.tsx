@@ -9,7 +9,7 @@ export default function Statistics({ sectionBackgroundColor }: any) {
 		<>
 			<section
 				style={{ backgroundColor: sectionBackgroundColor }}
-				id="ContactMe"
+				id="Statistics"
 			>
 				<SubHeading heading={"Some Statistics"} maxWidth={'900px'}/>
 				
