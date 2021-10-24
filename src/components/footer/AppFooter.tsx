@@ -1,4 +1,4 @@
-import { GithubOutlined, LinkedinFilled, MailOutlined } from '@ant-design/icons'
+import { GithubOutlined, InstagramOutlined, LinkedinFilled, MailOutlined } from '@ant-design/icons'
 import { Footer } from 'antd/lib/layout/layout'
 import React from 'react'
 import styled from 'styled-components'
@@ -8,6 +8,7 @@ export const AppFooter = () => {
         <FooterWrapper>
             <section>
                 <ul className="footer-nav-links">
+                    
                     <li className="footer-nav-link">
                         <span>
                             <a
@@ -37,6 +38,14 @@ export const AppFooter = () => {
                             </a>
                         </span>
                     </li>
+                    <li className="footer-nav-link">
+                        <span>
+                            <a href="https://www.instagram.com/prince_willz_/" target="_blank" rel="noopener noreferrer">
+                                <InstagramOutlined />
+                            </a>
+                        </span>
+                    </li>
+                    
                 </ul>
             </section>
         </FooterWrapper>
@@ -49,15 +58,18 @@ const FooterWrapper = styled(Footer)`
     background: #272727;
 
 	section {
-		text-align: center;
+		// text-align: center;
 	}
 
 	.footer-nav-links {
+        padding: 0;
+        margin: 0;
 		// margin-top: 2rem;
 		display: flex;
 		gap: 2rem;
 		list-style: none;
 		justify-content: center;
+        
 	}
 	.footer-nav-link {
 		cursor: pointer;
