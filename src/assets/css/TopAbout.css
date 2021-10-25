@@ -1,6 +1,6 @@
 .top-about-container {
 	/* min-height: 90vh; */
-	padding-top: 15vh;
+	padding-top: 100px;
 }
 .about-content-container {
 	display: grid;
@@ -83,7 +83,7 @@
 @media only screen and (max-width: 950px) {
 	.top-about-container {
 		/* min-height: 90vh; */
-		padding-top: 10vh;
+		padding-top: 80px;
 	}
 	.about-content-container {
 		width: 80%;
