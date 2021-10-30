@@ -4,7 +4,7 @@ export const featuredProjectsRawData = Object.freeze({
             name: 'UntangledChat',
             descriptionPoints: [
                 'Developed a Messaging app with a focus on scalability and privacy',
-                'Used RabbitMQ forrouting messages to associated WebSocket to decouple systems and easily scale WebSockets horizontally',
+                'Used RabbitMQ for routing messages to associated WebSocket to decouple systems and easily scale WebSockets horizontally',
                 'Established End-to-end encryption using RSA public-key cryptosystem',
                 'Integrated a ChatBot trained on 1.7 million comments using BRNN'
             ],
@@ -29,7 +29,7 @@ export const featuredProjectsRawData = Object.freeze({
         {
             name: 'Geo-Parking',
             descriptionPoints: [
-                'Built a full-stack distributed web app to assist people to find nearby parking spots and rent theirland as a parking spot',
+                'Built a full-stack distributed web app to assist people to find nearby parking spots and rent their land as a parking spot',
                 'Integrated map and geocoding search to enhance interactivity',
                 'Implemented 6 microservices including API gateway (with token-based authorization), service registry, config, and authentication server',
                 'Used Redis as distributed cache, decreasing the response time up to 5x'
