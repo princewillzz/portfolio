@@ -1,13 +1,15 @@
 export const otherProjectsRawData = Object.freeze({
     featured: [
         {
-            name: 'Crypto Analyser',
+            name: 'Covid-19 Tracker',
             descriptionPoints: [
-                `Built a Web app to view live Crypto Coins updates such as, price, volume used, change percentage, etc`
+                'Web app to view live Covid-19 updates with interactive graphs using ChartJS and material-UI using open-source mathdroid api',
+                
             ],
-            tools: ['React-JS', 'Material-UI', 'ChartJS'],
-            githubLink: 'https://github.com/princewillzz/crypto_analysis_app',
-            hostedLink: 'https://crypto-analysis.netlify.app/'
+            tools: ['React-JS', 'Material-UI'],
+            githubLink: 'https://github.com/princewillzz/covid-19-tracker',
+            hostedLink: 'https://naughty-kare-16921a.netlify.app/',
+
         },
         {
             name: 'My Code Helper',
