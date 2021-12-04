@@ -49,10 +49,10 @@ export const featuredProjectsRawData = Object.freeze({
             hostedLink: 'https://geoparking.netlify.app/'
         },
         {
-            name: 'Covid-19 Tracker',
+            name: 'Crypto Analyser',
             descriptionPoints: [
-                'Web app to view live Covid-19 updates with interactive graphs using ChartJS and material-UI using open-source mathdroid api',
-                
+                `Built a Web app, to view live Crypto Coins information such as Price,
+                Market Capital, growth, rank, etc`
             ],
             images: [
                 '/img/c1.png',
@@ -60,10 +60,9 @@ export const featuredProjectsRawData = Object.freeze({
                 '/img/c3.png',
                 '/img/c4.png',
             ],
-            tools: ['React-JS', 'Material-UI'],
-            githubLink: 'https://github.com/princewillzz/covid-19-tracker',
-            hostedLink: 'https://naughty-kare-16921a.netlify.app/',
-
-        }
+            tools: ['Typescript', 'React-JS', 'Material-UI', 'ChartJS'],
+            githubLink: 'https://github.com/princewillzz/crypto_analysis_app',
+            hostedLink: 'https://crypto-analysis.netlify.app/'
+        },
     ]
 })
