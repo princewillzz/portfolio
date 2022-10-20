@@ -7,7 +7,7 @@ export const useProfileData = () => {
     useEffect(() => {
         const loadingTimeout = setTimeout(() => {
             setIsLoadingDone(true);
-        }, 2000);
+        }, 2001);
 
 
         return () => {

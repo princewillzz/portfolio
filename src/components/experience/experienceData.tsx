@@ -1,6 +1,21 @@
 export const experienceRawData = Object.freeze({
     data: [
         {
+            companyName: "Rocketium",
+            jobRole: "Software Engineer",
+            description: [
+                "It is a SaaS product for creative and design process automation",
+                "Built media assets delivery integration to Facebook and Google ad Accounts",
+                "Worked on enhancing and fixing defects for in production software",
+                "Managed the setup, development and deployment of a few lambda functions written in Nodejs and Python(FastAPI)",
+                "Setup precommit, testing framework and deployment pipeline for a repository in bitbucket",
+                "Tech: Typescript, ReactJS, Nodejs, MongoDB, AWS lambda(Serverless), Python and FastAPI"
+            ],
+            startDate: "Mar 2022",
+            endDate: "Present",
+            websiteLink: 'https://rocketium.com/'
+        },
+        {
             companyName: "Eleva Infotech",
             jobRole: "Backend Engineer",
             description: [
@@ -11,7 +26,8 @@ export const experienceRawData = Object.freeze({
                 "Built aggregation pipeline, Rest APIs and UI to process and present analytical data regarding overall sales, each item sales, inventory, with other filters"
             ],
             startDate: "Aug 2021",
-            endDate: "Present"
+            endDate: "Mar 2022",
+            websiteLink: "https://www.linkedin.com/company/eleva-infotech-private-limited/"
         },
         {
             companyName: "Chuhiya Software",
