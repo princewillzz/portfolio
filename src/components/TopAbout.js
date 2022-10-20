@@ -1,5 +1,5 @@
 import React from "react";
-import profileImg from "../assets/images/profile1.jpg";
+import profileImg from "../assets/images/p1.jpeg";
 import { SubHeading } from "./SubHeading";
 
 export default function TopAbout({ sectionBackgroundColor }) {
