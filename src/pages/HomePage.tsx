@@ -34,7 +34,7 @@ export const HomePage = () => {
                 bottomColor={AppColors.darkBlue}
             />
 
-            <Experience 
+            <Experience
                 sectionBackgroundColor={AppColors.darkBlue} 
             />
 

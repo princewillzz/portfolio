@@ -7,7 +7,7 @@ import { AppColors } from '../../assets/AppColors';
 import { ExperienceProps } from '../interface/ExperienceProps';
 import { TabContainerProps } from '../interface/TabContainerProps';
 import { SubHeading } from '../SubHeading';
-import { experienceRawData } from './experience';
+import { experienceRawData } from './experienceData';
 
 
 const { TabPane } = Tabs;
@@ -17,7 +17,8 @@ interface ExperienceData {
     jobRole: string,
     description: string[],
     startDate: string,
-    endDate: string
+    endDate: string,
+    websiteLink?: string
 }
 
 const widthToChangeLayout = 680;
@@ -79,9 +80,14 @@ export const Experience: React.FC<ExperienceProps> = ({ sectionBackgroundColor }
                             <div className="job-heading">
                                 <h2 style={{ margin: 0 }}>
                                     {_experienceData.jobRole} 
-                                    <span style={{ color: AppColors.activeTextColor, marginLeft: 12 }}>
+                                    <a 
+                                        href={_experienceData.websiteLink}
+                                        target="_blank" 
+							            rel="noopener noreferrer"
+                                        style={{ color: AppColors.activeTextColor, marginLeft: 12 }}
+                                    >
                                         @ {_experienceData.companyName?.split(" ")?.slice(0, 1)}
-                                    </span>
+                                    </a>
                                 </h2>
                                 <span>{_experienceData.startDate} - {_experienceData.endDate}</span>
                                 { windowInnerWidthSize > widthToChangeLayout && <Divider style={{ background: "rgba(100, 110, 140)", margin: 0 , marginTop: 10}}  />}

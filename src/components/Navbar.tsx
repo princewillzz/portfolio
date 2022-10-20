@@ -101,7 +101,7 @@ export default function Navbar({ sectionBackgroundColor }: any) {
 						
 						<a 
 							className={`nav-link resume`} 
-							href="/Harsh_Tiwari_Resume.pdf" 
+							href="https://drive.google.com/file/d/1-wVzqyJuimMSa2SHzoh-YUVIj45-UzE2/view" 
 							target="_blank" 
 							rel="noopener noreferrer"
 						>
