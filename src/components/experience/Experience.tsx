@@ -175,6 +175,9 @@ const TabContainer = styled.section<TabContainerProps>`
         background: #181746;
         transform: scale(0.91);
     }
+    .ant-tabs-tab.ant-tabs-tab-active {
+        background: #181746;
+    }
     .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
         color: ${props => props.activeColor};
     }
