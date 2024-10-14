@@ -1,6 +1,20 @@
 export const experienceRawData = Object.freeze({
 	data: [
 		{
+			companyName: "CommerceIQ",
+			jobRole: "Associate Software Development Engineer",
+			description: [
+				"Designed and developed a scheduling platform for interval-based seed crawling, processing 15 million seeds daily and automatically crawling client-competitor SKUs, reducing crawling volume by 40% and saving $35,000 monthly.",
+				"Designed and implemented data pipelines to extract data from diverse retailer APIs, employing strategies for large-scale data acquisition, rate limiting and authentication handling to ensure seamless and secure data gathering.",
+				"Implemented and deployed alerting mechanism and issue dashboard for 600+ crawlers, establishing CI/CD pipeline. Reduced monthly reported customer issues from 70+ to almost 0.",
+				"Architected a configurable data gathering platform capable of interfacing with multiple APIs, dynamically adapting to varying configurations, and transforming data for streamlined future processing.",
+				"Tech: Spring boot, Java, Typescript, NodeJS, python, Apache beam, GCP (BigQuery, Dataflow, cloud run, cloud tasks, scheduler)"
+			],
+			startDate: "June 2023",
+			endDate: "Present",
+			websiteLink: "https://commerceiq.ai/",
+		},
+		{
 			companyName: "Toplyne",
 			jobRole: "Software Engineer Intern",
 			description: [
@@ -9,7 +23,7 @@ export const experienceRawData = Object.freeze({
 				"Tech: Reactjs, Typescript, Python, Django, NodeJS, Serverless",
 			],
 			startDate: "Jan 2023",
-			endDate: "Present",
+			endDate: "Jun 2023",
 			websiteLink: "https://toplyne.io/",
 		},
 		{
