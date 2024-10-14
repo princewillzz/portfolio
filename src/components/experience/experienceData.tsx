@@ -8,7 +8,7 @@ export const experienceRawData = Object.freeze({
 				"Designed and implemented data pipelines to extract data from diverse retailer APIs, employing strategies for large-scale data acquisition, rate limiting and authentication handling to ensure seamless and secure data gathering.",
 				"Implemented and deployed alerting mechanism and issue dashboard for 600+ crawlers, establishing CI/CD pipeline. Reduced monthly reported customer issues from 70+ to almost 0.",
 				"Architected a configurable data gathering platform capable of interfacing with multiple APIs, dynamically adapting to varying configurations, and transforming data for streamlined future processing.",
-				"Tech: Spring boot, Java, Typescript, NodeJS, python, Apache beam, GCP (BigQuery, Dataflow, cloud run, cloud tasks, scheduler)"
+				"Tech: Spring boot, Java, Typescript, NodeJS, python, Apache beam, GCP (BigQuery, Dataflow, cloud run, cloud tasks, scheduler), AWS (Lambda, SQS, S3)"
 			],
 			startDate: "June 2023",
 			endDate: "Present",
