@@ -27,7 +27,9 @@ export default function TopAbout({ sectionBackgroundColor }) {
 					<div className="decription-container">
 						<h1>Hi, I'm Harsh Tiwari</h1>
 						<p>
-						I am enthusiastic and hardworking and always in urge for growing my skills and trying to be an asset to the team and to the organisation. I am willing to take up interesting and challenging work and looking forward to learn from the team and organisation.
+							I am a passionate Software Engineer with expertise in building scalable backend systems, designing data pipelines, and working with cloud platforms like GCP and AWS. I have experience across multiple roles, including developing interval-based crawlers, architecting secure data acquisition systems, and streamlining CI/CD pipelines. 
+							<br />With hands-on experience at companies like CommerceIQ, Toplyne, and Rocketium, I specialize in Java, Python, Node.js, and TypeScript. I thrive in problem-solving, improving system efficiency, and creating solutions that drive business impact.
+							<br />Feel free to explore my projects, experience, and skills showcased here!
 						</p>
 					</div>
 					<div className="profile-picture-container">
